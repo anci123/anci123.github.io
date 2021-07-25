@@ -5,23 +5,23 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>My New Hugo Site</title><meta name=Description content><meta property="og:title" content="My New Hugo Site">
+<title>饅頭的部落格</title><meta name=Description content><meta property="og:title" content="饅頭的部落格">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
 <meta property="og:url" content="http://example.org/">
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="My New Hugo Site">
+<meta name=twitter:title content="饅頭的部落格">
 <meta name=twitter:description content>
-<meta name=application-name content="My New Hugo Site">
-<meta name=apple-mobile-web-app-title content="My New Hugo Site"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<meta name=application-name content="饅頭的部落格">
+<meta name=apple-mobile-web-app-title content="饅頭的部落格"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://example.org/><link rel=alternate href=/index.xml type=application/rss+xml title="My New Hugo Site">
-<link rel=feed href=/index.xml type=application/rss+xml title="My New Hugo Site"><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","url":"http:\/\/example.org\/","inLanguage":"en","name":"My New Hugo Site"}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://example.org/><link rel=alternate href=/index.xml type=application/rss+xml title=饅頭的部落格>
+<link rel=feed href=/index.xml type=application/rss+xml title=饅頭的部落格><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","url":"http:\/\/example.org\/","inLanguage":"en","name":"饅頭的部落格"}</script></head>
 <body header-desktop header-mobile><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':''==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:''==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
 <div class=header-title>
-<a href=/ title="My New Hugo Site">My New Hugo Site</a>
+<a href=/ title=饅頭的部落格>饅頭的部落格</a>
 </div>
 <div class=menu>
 <div class=menu-inner><a class=menu-item href=/posts/> Posts </a><a class=menu-item href=/tags/> Tags </a><a class=menu-item href=/categories/> Categories </a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
@@ -34,7 +34,7 @@
 <div class=header-container>
 <div class=header-wrapper>
 <div class=header-title>
-<a href=/ title="My New Hugo Site">My New Hugo Site</a>
+<a href=/ title=饅頭的部落格>饅頭的部落格</a>
 </div>
 <div class=menu-toggle id=menu-toggle-mobile>
 <span></span><span></span><span></span>
@@ -54,6 +54,13 @@
 <main class=main>
 <div class=container><div class="page home" posts><div class=home-profile></div>
 <article class="single summary" itemscope itemtype=http://schema.org/Article><h1 class=single-title itemprop="name headline">
+<a href=/posts/learningc++01/>LearningC++01</a>
+</h1><div class=post-meta><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Author</a></span>&nbsp;<span class=post-publish>published on <time datetime=2021-07-25>2021-07-25</time></span></div><div class=content>C++學習筆記 [toc]
+標頭檔 &lt;bits/stdc++.h> 是萬能標頭檔，有了他就不用寫其他的標頭檔 using name std; 有了它就可以不用一直帶上函式庫的全名(std::) #include&lt;bits/stdc++.h> using namespace std; 但上面的作法會讓程式跑的速度變慢，可以使用以下方法
+sync_with_stdio 式可以兼容 stdio 的意思，這是 C++ 為了可以兼容C所做的一個設定 cin.tie 這是將 cin 跟 cout 綁定的意思 endl 是 換行 加上 flush(清空緩衝區)，換成'\n'，速度會快上許多 ios::sync_with_stdio(0); cin.tie(0); cout&lt;&lt;"Hello"&lt;&lt;'\n'; 輸入 stringstream stringstream 應用
+int -> string string convert; stringstream ss; int number=123456; ss&lt;&lt;number; ss>>convert; string -> int string numstr="123"; int num; stringstream ss; ss&lt;&lt;numstr; ss>>num; 清空 ss.</div><div class=post-footer>
+<a href=/posts/learningc++01/>Read More</a></div>
+</article><article class="single summary" itemscope itemtype=http://schema.org/Article><h1 class=single-title itemprop="name headline">
 <a href=/posts/program2/>Program2</a>
 </h1><div class=post-meta><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Author</a></span>&nbsp;<span class=post-publish>published on <time datetime=2021-07-25>2021-07-25</time></span></div><div class=content>title: &ldquo;Program2&rdquo; tags: program categories: learning date: 2021-07-25T14:06:13+08:00
 title: 程式設計（二）
