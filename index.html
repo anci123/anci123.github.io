@@ -54,9 +54,17 @@
 <main class=main>
 <div class=container><div class="page home" posts><div class=home-profile></div>
 <article class="single summary" itemscope itemtype=http://schema.org/Article><h1 class=single-title itemprop="name headline">
-<a href=/posts/hugoblog/>HugoBlog</a>
-</h1><div class=post-meta><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Author</a></span>&nbsp;<span class=post-publish>published on <time datetime=2021-07-25>2021-07-25</time></span></div><div class=content>Test </div><div class=post-footer>
-<a href=/posts/hugoblog/>Read More</a></div>
+<a href=/posts/program1/>Program1</a>
+</h1><div class=post-meta><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Author</a></span>&nbsp;<span class=post-publish>published on <time datetime=2021-07-25>2021-07-25</time></span></div><div class=content>程式設計(一) :::warning
+注意事項 main函式先加 return 0 先初始化變數 使用 ++i, &ndash;i而不是 i++ scanf("%d",&a); ::: Arithmetic 計算 \ 跳脫字元 \t -> tab \n ->換行 \" -> " \\ -> \ printf format 類型字元 格式 %d 十進位帶號整數(int32_t) %ld (int64_t) %hd (int16_t) %hhd (int8_t) %u 十進位無號整數(uint32_t) %lu,%hu,%hhu (uint64_t)(uint16_t) (uint8_t) %f,%g,%e float(%g:去掉尾端的0)(%e:科學記號) %lf,%lg,%le double %x %X 十六進位整數(X:輸出為大寫) %o 八進位整數 %p 指標位址 %c 字元 %s 字串 a % b -> ( a/ b) * b + a % b = a -> -2 % 7=-2 string string functions string conversion functions 標頭檔: #inlcude&lt;stdlib.</div><div class=post-footer>
+<a href=/posts/program1/>Read More</a></div>
+</article><article class="single summary" itemscope itemtype=http://schema.org/Article><h1 class=single-title itemprop="name headline">
+<a href=/posts/program2/>HugoBlog</a>
+</h1><div class=post-meta><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>Author</a></span>&nbsp;<span class=post-publish>published on <time datetime=2021-07-25>2021-07-25</time></span></div><div class=content>目錄 [toc]
+struct 解決 alignment 的問題 __attribute__((packed))
+#pragma pack(push, 1) #pragma pack(pop) #pragma pack(push) #pragma pack(1) #pragma pack(pop) File fread header: &lt;stdio.h> size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream); 務必用型別為size_t 的變數去接回傳值 size 為 1 時，將回傳讀入多少 bytes Program Arguements getopt *header: &lt;unistd.h> (POSIX standard) 不一定能在windows上呼叫
+int getopt(int argc, char * const argv[], const char *optstring); argc: argument count(前面有加'-'，才會被當作 arguement) argv: argument array return value 是 command,若不再optstring 中則回傳 &lsquo;?</div><div class=post-footer>
+<a href=/posts/program2/>Read More</a></div>
 </article></div></div>
 </main><footer class=footer>
 <div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.86.0">Hugo</a> | Theme - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
