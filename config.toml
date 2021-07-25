@@ -11,7 +11,18 @@ theme = "LoveIt"
 enableRobotsTXT = true
 enableGitInfo = false
 enableEmoji = true
-[languages.zh-cn.params]
+[languages]
+  [languages.en]
+    weight = 1
+    # language code
+    languageCode = "en"
+    # language name
+    languageName = "English"
+    # whether to include Chinese/Japanese/Korean
+    hasCJKLanguage = false
+    # default amount of posts in each pages
+    paginate = 12
+    [languages.zh-cn.params]
       # 网站描述
       description = "饅頭的部落格"
       # 网站关键词
