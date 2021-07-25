@@ -1,6 +1,18 @@
 ---
-title: "HugoBlog"
-date: 2021-07-25T14:54:02+08:00
+title: "Program2"
+date: 2021-07-25T15:07:35+08:00
+---
+---
+title: "Program2"
+tags: program
+categories: learning
+date: 2021-07-25T14:06:13+08:00
+
+---
+
+title: 程式設計（二）
+
+tags: program
 ---
 
 ## 目錄
