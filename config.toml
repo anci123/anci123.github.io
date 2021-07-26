@@ -61,14 +61,14 @@ enableEmoji = true
         url = "/about/"
         title = ""
         weight = 5
-      [[languages.zh-tw.menu.main]]
-        identifier = "github"
-        pre = "<i class='fab fa-github fa-fw'></i>"
-        post = ""
-        name = ""
-        url = "https://github.com/anci123"
-        title = "GitHub"
-        weight = 6
+#      [[languages.zh-tw.menu.main]]
+#        identifier = "github"
+#        pre = "<i class='fab fa-github fa-fw'></i>"
+#        post = ""
+#        name = ""
+#        url = "https://github.com/anci123t"
+#        title = "GitHub"
+#        weight = 6
 
       # 主页信息设置
       [languages.zh-tw.params.home]
