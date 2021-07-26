@@ -4,7 +4,7 @@
 - `git init`: 初始化當前目錄，開始進行版控~(產生.git 目錄)
 - `git status` : 查詢當前狀態(commit 前查看狀態)
 - `git add`: 將檔案加入暫存區(commit 前 add)
-    - `add -all`，`add .`
+    - `add --all`，`add .`
     - `add 資料夾`
     - `add 檔案`
 - `git commit`: 儲存異動

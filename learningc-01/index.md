@@ -5,24 +5,23 @@
 
 ## 標頭檔
 
-* **<bits/stdc++.h>** 是萬能標頭檔，有了他就不用寫其他的標頭檔
+* **<bits/stdc++.h>** 是萬能標頭檔
 * **using name std;** 有了它就可以不用一直帶上函式庫的全名(std::)
 
 ```c++
-#include<bits/stdc++.h>
-using namespace std;
+  #include<bits/stdc++.h>
+  using namespace std;
 ```
-
-**但上面的作法會讓程式跑的速度變慢，可以使用以下方法**
 
 * sync_with_stdio 式可以兼容 stdio 的意思，這是 C++ 為了可以兼容C所做的一個設定
 * cin.tie 這是將 cin 跟 cout 綁定的意思
 * endl 是 換行 加上 flush(清空緩衝區)，換成'\n'，速度會快上許多
+* 用scanf 跟 printf 速度最快
 
 ```C++
-ios::sync_with_stdio(0);
-cin.tie(0); 
-cout<<"Hello"<<'\n';
+  ios::sync_with_stdio(0);
+  cin.tie(0); 
+  cout<<"Hello"<<'\n';
 ```
 
 ## 輸入
