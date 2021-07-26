@@ -1,0 +1,1077 @@
+<!doctype html><html lang=zh-tw>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
+<title>StarCoder暑訓week1 - 饅頭的部落格</title><meta name=Description content><meta property="og:title" content="StarCoder暑訓week1">
+<meta property="og:description" content="搜尋/排序/貪心 教材 線上教材 教材 說明 師大碼賽客：排序/貪心/二分搜 子緯學長的教學講義（詳盡的新手入門） 北一女培訓：排序 六種排序法的程式與簡介">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://blog.manto-meow.tk/starcoder%E6%9A%91%E8%A8%93week1/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-07-26T23:10:40+08:00">
+<meta property="article:modified_time" content="2021-07-26T23:10:40+08:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="StarCoder暑訓week1">
+<meta name=twitter:description content="搜尋/排序/貪心 教材 線上教材 教材 說明 師大碼賽客：排序/貪心/二分搜 子緯學長的教學講義（詳盡的新手入門） 北一女培訓：排序 六種排序法的程式與簡介">
+<meta name=application-name content="饅頭的部落格">
+<meta name=apple-mobile-web-app-title content="饅頭的部落格"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://blog.manto-meow.tk/starcoder%E6%9A%91%E8%A8%93week1/><link rel=prev href=http://blog.manto-meow.tk/learninggit01/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"StarCoder暑訓week1","inLanguage":"zh-TW","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/blog.manto-meow.tk\/starcoder%E6%9A%91%E8%A8%93week1\/"},"genre":"posts","keywords":"Starcoder暑訓, C\u002b\u002b","wordcount":2060,"url":"http:\/\/blog.manto-meow.tk\/starcoder%E6%9A%91%E8%A8%93week1\/","datePublished":"2021-07-26T23:10:40+08:00","dateModified":"2021-07-26T23:10:40+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"饅頭"},"author":{"@type":"Person","name":"饅頭"},"description":""}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'dark'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'dark'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=饅頭的部落格><span class=header-title-pre><i class="fas fa-cat"></i></span><span id=id-1 class=typeit></span></a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/> 文章 <i class="fas fa-file-alt"></i></a><a class=menu-item href=/tags/> 標籤 <i class="fas fa-tags"></i></a><a class=menu-item href=/categories/> 分類 <i class="far fa-list-alt"></i></a><a class=menu-item href=/about/><i class="far fa-paw-alt"></i> 關於我 </a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item theme-switch" title>
+<i class="fas fa-adjust fa-fw"></i>
+</a>
+</div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=饅頭的部落格><span class=header-title-pre><i class="fas fa-cat"></i></span><span id=id-2 class=typeit></span></a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><a class=menu-item href=/posts/ title>文章<i class="fas fa-file-alt"></i></a><a class=menu-item href=/tags/ title>標籤<i class="fas fa-tags"></i></a><a class=menu-item href=/categories/ title>分類<i class="far fa-list-alt"></i></a><a class=menu-item href=/about/ title><i class="far fa-paw-alt"></i>關於我</a><a href=javascript:void(0); class="menu-item theme-switch" title>
+<i class="fas fa-adjust fa-fw"></i>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title></h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">StarCoder暑訓week1</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>饅頭</a></span>&nbsp;<span class=post-category></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-07-26>2021-07-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;&nbsp;</div>
+</div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span></span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#教材>教材</a>
+<ul>
+<li><a href=#線上教材>線上教材</a></li>
+<li><a href=#線上影片>線上影片</a></li>
+<li><a href=#演算法視覺化>演算法視覺化</a></li>
+</ul>
+</li>
+<li><a href=#題目>題目</a>
+<ul>
+<li><a href=#a--flip-sorthttpsvjudgenetcontest446298problema-uva-10327httpsvjudgenetproblemuva-10327origin>A <a href=https://vjudge.net/contest/446298#problem/A> Flip Sort</a> <a href=https://vjudge.net/problem/UVA-10327/origin>UVA 10327</a></a></li>
+<li><a href=#b--age-sorthttpsvjudgenetcontest446298problemb-uva-11462httpsvjudgenetproblemuva-11462origin>B <a href=https://vjudge.net/contest/446298#problem/B> Age Sort</a> <a href=https://vjudge.net/problem/UVA-11462/origin>UVA 11462</a></a></li>
+<li><a href=#c--conformityhttpsvjudgenetcontest446298problemc-uva-11286httpsvjudgenetproblemuva-11286origin>C <a href=https://vjudge.net/contest/446298#problem/C> Conformity</a> <a href=https://vjudge.net/problem/UVA-11286/origin>UVA 11286</a></a></li>
+<li><a href=#d--guessing-gamehttpsvjudgenetcontest446298problemd-uva-10530httpsvjudgenetproblemuva-10530origin>D <a href=https://vjudge.net/contest/446298#problem/D> Guessing Game</a> <a href=https://vjudge.net/problem/UVA-10530/origin>UVA 10530</a></a></li>
+<li><a href=#e--ancient-cipherhttpsvjudgenetcontest446298probleme-uva-1339httpsvjudgenetproblemuva-1339origin>E <a href=https://vjudge.net/contest/446298#problem/E> Ancient Cipher</a> <a href=https://vjudge.net/problem/UVA-1339/origin>UVA 1339</a></a></li>
+<li><a href=#f--bridge-handshttpsvjudgenetcontest446298problemf-uva-555httpsvjudgenetproblemuva-555origin>F <a href=https://vjudge.net/contest/446298#problem/F> Bridge Hands</a> <a href=https://vjudge.net/problem/UVA-555/origin>UVA 555</a></a></li>
+<li><a href=#g--vitos-familyhttpsvjudgenetcontest446298problemg-uva-10041httpsvjudgenetproblemuva-10041origin>G <a href=https://vjudge.net/contest/446298#problem/G> Vito&rsquo;s Family</a> <a href=https://vjudge.net/problem/UVA-10041/origin>UVA 10041</a></a></li>
+<li><a href=#h--shoemakers-problemhttpsvjudgenetcontest446298problemh-uva-10026httpsvjudgenetproblemuva-10026origin>H <a href=https://vjudge.net/contest/446298#problem/H> Shoemaker&rsquo;s Problem</a> <a href=https://vjudge.net/problem/UVA-10026/origin>UVA 10026</a></a></li>
+<li><a href=#i-the-bus-driver-problemhttpsvjudgenetcontest446298problemi-uva-11389httpsvjudgenetproblemuva-11389origin>I <a href=https://vjudge.net/contest/446298#problem/I>The Bus Driver Problem</a> <a href=https://vjudge.net/problem/UVA-11389/origin>UVA 11389</a></a></li>
+<li><a href=#j-watering-grasshttpsvjudgenetcontest446298problemj-uva-10382httpsvjudgenetproblemuva-10382origin>J <a href=https://vjudge.net/contest/446298#problem/J>Watering Grass</a> <a href=https://vjudge.net/problem/UVA-10382/origin>UVA 10382</a></a></li>
+<li><a href=#k--ultra-quicksorthttpsvjudgenetcontest446298problemk-uva-10810httpsvjudgenetproblemuva-10810origin>K <a href=https://vjudge.net/contest/446298#problem/K> Ultra-QuickSort</a> <a href=https://vjudge.net/problem/UVA-10810/origin>UVA 10810</a></a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
+</div><div class=content id=content><h1 id=搜尋排序貪心>搜尋/排序/貪心</h1>
+<h2 id=教材>教材</h2>
+<h3 id=線上教材>線上教材</h3>
+<table>
+<thead>
+<tr>
+<th>教材</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href=https://drive.google.com/file/d/1_7Ch2G52jH8fHqlO_Atmjp9smAnvq9R4/view target=_blank rel="noopener noreffer">師大碼賽客：排序/貪心/二分搜</a></td>
+<td>子緯學長的教學講義（詳盡的新手入門）</td>
+</tr>
+<tr>
+<td><a href=https://web.fg.tp.edu.tw/~tfgcsblog/blog/wp-content/uploads/2010/12/Training-2-Sorting-All.pdf target=_blank rel="noopener noreffer">北一女培訓：排序</a></td>
+<td>六種排序法的程式與簡介</td>
+</tr>
+<tr>
+<td><a href=https://tioj.ck.tp.edu.tw/uploads/attachment/5/12/1_2.pdf target=_blank rel="noopener noreffer">建中培訓 (第4/6/7節)</a></td>
+<td>4. 排序STL / 6.貪心 / 7.二分搜</td>
+</tr>
+<tr>
+<td><a href=https://www.csie.ntu.edu.tw/~sprout/algo2019/ppt_pdf/week05/greedy.pdf target=_blank rel="noopener noreffer">台大資訊之芽：貪心</a></td>
+<td>貪心法與理論 / Huffman Tree</td>
+</tr>
+<tr>
+<td><a href=https://nckuacm.github.io/2019/ target=_blank rel="noopener noreffer">成大競程培訓 (單元5/6)</a></td>
+<td>5.二分搜 / 6.三種排序</td>
+</tr>
+</tbody>
+</table>
+<h3 id=線上影片>線上影片</h3>
+<table>
+<thead>
+<tr>
+<th>影片</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href=https://youtu.be/QVj81KR-_Hk target=_blank rel="noopener noreffer">台大孔令傑老師：二分搜尋法</a></td>
+<td>7 分鐘學會二分搜尋法</td>
+</tr>
+<tr>
+<td><a href=https://www.youtube.com/user/AlgoRythmics/videos target=_blank rel="noopener noreffer">看舞蹈學排序法</a></td>
+<td>以舞蹈呈現各種排序法的運作過程</td>
+</tr>
+<tr>
+<td><a href=https://youtu.be/Q6VyP6P4ukA target=_blank rel="noopener noreffer">台大陳縕儂老師：貪心</a></td>
+<td>50 分鐘的正規演算法課程 (CLRS課本)</td>
+</tr>
+</tbody>
+</table>
+<h3 id=演算法視覺化>演算法視覺化</h3>
+<table>
+<thead>
+<tr>
+<th>演算法</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href=https://www.cs.usfca.edu/~galles/visualization/Search.html target=_blank rel="noopener noreffer">線性搜尋與二分搜尋</a></td>
+<td>以動畫呈現兩種搜尋法的運作過程</td>
+</tr>
+<tr>
+<td><a href=https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html target=_blank rel="noopener noreffer">排序</a></td>
+<td>以動畫呈現六種排序演算法的運作過程</td>
+</tr>
+</tbody>
+</table>
+<h2 id=題目>題目</h2>
+<h3 id=a--flip-sorthttpsvjudgenetcontest446298problema-uva-10327httpsvjudgenetproblemuva-10327origin>A <a href=https://vjudge.net/contest/446298#problem/A target=_blank rel="noopener noreffer"> Flip Sort</a> <a href=https://vjudge.net/problem/UVA-10327/origin target=_blank rel="noopener noreffer">UVA 10327</a></h3>
+<ul>
+<li>
+<p>題目</p>
+<ul>
+<li>給一些未排序過的數字，將該數列由小到大排好，只能跟相鄰的數字交換，輸出最少要交換幾次</li>
+</ul>
+</li>
+<li>
+<p>作法</p>
+<ul>
+<li>bubble sort</li>
+</ul>
+</li>
+<li>
+<p>Code</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=cp>#include</span><span class=cpf>&lt;bits/stdc++.h&gt;</span><span class=cp>
+</span><span class=cp></span><span class=n>using</span> <span class=n>namespace</span> <span class=n>std</span><span class=p>;</span>
+<span class=kt>int</span> <span class=nf>main</span><span class=p>(){</span>
+    <span class=kt>int</span> <span class=n>N</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span>
+    <span class=k>while</span><span class=p>(</span><span class=n>cin</span><span class=o>&gt;&gt;</span><span class=n>N</span><span class=p>){</span>
+        <span class=kt>int</span> <span class=n>n</span><span class=p>[</span><span class=n>N</span><span class=p>],</span><span class=n>ope</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span>
+        <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span><span class=n>i</span><span class=o>&lt;</span><span class=n>N</span><span class=p>;</span><span class=o>++</span><span class=n>i</span><span class=p>)</span> <span class=n>cin</span><span class=o>&gt;&gt;</span><span class=n>n</span><span class=p>[</span><span class=n>i</span><span class=p>];</span>
+        <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span><span class=n>i</span><span class=o>&lt;</span><span class=n>N</span><span class=p>;</span><span class=o>++</span><span class=n>i</span><span class=p>){</span>
+            <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>j</span><span class=o>=</span><span class=n>N</span><span class=o>-</span><span class=mi>1</span><span class=p>;</span><span class=n>j</span><span class=o>&gt;</span><span class=n>i</span><span class=p>;</span><span class=o>--</span><span class=n>j</span><span class=p>){</span>
+                <span class=k>if</span><span class=p>(</span><span class=n>n</span><span class=p>[</span><span class=n>j</span><span class=o>-</span><span class=mi>1</span><span class=p>]</span><span class=o>&gt;</span><span class=n>n</span><span class=p>[</span><span class=n>j</span><span class=p>]){</span>
+                    <span class=n>swap</span><span class=p>(</span><span class=n>n</span><span class=p>[</span><span class=n>j</span><span class=o>-</span><span class=mi>1</span><span class=p>],</span><span class=n>n</span><span class=p>[</span><span class=n>j</span><span class=p>]);</span>
+                    <span class=o>++</span><span class=n>ope</span><span class=p>;</span>
+                <span class=p>}</span>
+            <span class=p>}</span>
+        <span class=p>}</span>
+        <span class=n>cout</span><span class=o>&lt;&lt;</span><span class=s>&#34;Minimum exchange operations :&#34;</span><span class=o>&lt;&lt;</span><span class=sc>&#39; &#39;</span><span class=o>&lt;&lt;</span><span class=n>ope</span><span class=o>&lt;&lt;</span><span class=n>endl</span><span class=p>;</span>
+    <span class=p>}</span>
+    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id=b--age-sorthttpsvjudgenetcontest446298problemb-uva-11462httpsvjudgenetproblemuva-11462origin>B <a href=https://vjudge.net/contest/446298#problem/B target=_blank rel="noopener noreffer"> Age Sort</a> <a href=https://vjudge.net/problem/UVA-11462/origin target=_blank rel="noopener noreffer">UVA 11462</a></h3>
+<ul>
+<li>題目
+<ul>
+<li>將未排序的數列從小到大排好</li>
+</ul>
+</li>
+<li>作法
+<ul>
+<li>sort 函式</li>
+</ul>
+</li>
+<li>Code</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=cp>#include</span><span class=cpf>&lt;bits/stdc++.h&gt;</span><span class=cp>
+</span><span class=cp></span><span class=n>using</span> <span class=n>namespace</span> <span class=n>std</span><span class=p>;</span>
+<span class=kt>int</span> <span class=nf>main</span><span class=p>(){</span>
+    <span class=kt>int</span> <span class=n>N</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span>
+    <span class=k>while</span><span class=p>(</span><span class=n>cin</span><span class=o>&gt;&gt;</span><span class=n>N</span> <span class=o>&amp;&amp;</span> <span class=n>N</span><span class=p>){</span>
+        <span class=kt>int</span> <span class=n>n</span><span class=p>[</span><span class=n>N</span><span class=p>]</span><span class=o>=</span><span class=p>{</span><span class=mi>0</span><span class=p>};</span>
+        <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span><span class=n>i</span><span class=o>&lt;</span><span class=n>N</span><span class=p>;</span><span class=o>++</span><span class=n>i</span><span class=p>)</span> <span class=n>cin</span><span class=o>&gt;&gt;</span><span class=n>n</span><span class=p>[</span><span class=n>i</span><span class=p>];</span>
+        <span class=n>sort</span><span class=p>(</span><span class=n>n</span><span class=p>,</span><span class=n>n</span><span class=o>+</span><span class=n>N</span><span class=p>);</span>
+        <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span><span class=n>i</span><span class=o>&lt;</span><span class=n>N</span><span class=o>-</span><span class=mi>1</span><span class=p>;</span><span class=o>++</span><span class=n>i</span><span class=p>)</span> <span class=n>cout</span><span class=o>&lt;&lt;</span><span class=n>n</span><span class=p>[</span><span class=n>i</span><span class=p>]</span><span class=o>&lt;&lt;</span><span class=sc>&#39; &#39;</span><span class=p>;</span>
+        <span class=n>cout</span><span class=o>&lt;&lt;</span><span class=n>n</span><span class=p>[</span><span class=n>N</span><span class=o>-</span><span class=mi>1</span><span class=p>]</span><span class=o>&lt;&lt;</span><span class=n>endl</span><span class=p>;</span>
+    <span class=p>}</span>
+    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=c--conformityhttpsvjudgenetcontest446298problemc-uva-11286httpsvjudgenetproblemuva-11286origin>C <a href=https://vjudge.net/contest/446298#problem/C target=_blank rel="noopener noreffer"> Conformity</a> <a href=https://vjudge.net/problem/UVA-11286/origin target=_blank rel="noopener noreffer">UVA 11286</a></h3>
+<ul>
+<li>
+<p>題目</p>
+<ul>
+<li>一列(五個)課程為一個組合，輸出最多人選的課程組合的人數，若有多個組合的人數等於最大值則相加</li>
+</ul>
+</li>
+<li>
+<p>作法</p>
+<ul>
+<li>將課程排序後形成一組字串，每個組合就是一串字串，並用map記錄該組合的人數，最後記錄最大值，加上所有最多人選的組合的人數</li>
+</ul>
+</li>
+<li>
+<p>Code</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=cp>#include</span><span class=cpf>&lt;bits/stdc++.h&gt;</span><span class=cp>
+</span><span class=cp></span><span class=n>using</span> <span class=n>namespace</span> <span class=n>std</span><span class=p>;</span>
+<span class=kt>int</span> <span class=nf>main</span><span class=p>(){</span>
+    <span class=n>map</span><span class=o>&lt;</span><span class=n>string</span><span class=p>,</span><span class=kt>int</span><span class=o>&gt;</span> <span class=n>studentNumber</span><span class=p>;</span>
+    <span class=kt>int</span> <span class=n>N</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span>
+    <span class=k>while</span><span class=p>(</span><span class=n>cin</span><span class=o>&gt;&gt;</span><span class=n>N</span> <span class=o>&amp;&amp;</span> <span class=n>N</span><span class=p>){</span>
+        <span class=kt>int</span> <span class=n>max</span><span class=o>=</span><span class=mi>0</span><span class=p>,</span><span class=n>total</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span>
+        <span class=n>studentNumber</span><span class=p>.</span><span class=n>clear</span><span class=p>();</span>
+        <span class=k>while</span><span class=p>(</span><span class=n>N</span><span class=o>--</span><span class=p>){</span>
+            <span class=n>vector</span><span class=o>&lt;</span><span class=n>string</span><span class=o>&gt;</span> <span class=n>courseId</span><span class=p>;</span>
+            <span class=n>string</span> <span class=n>s</span><span class=p>;</span>
+            <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>j</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span><span class=n>j</span><span class=o>&lt;</span><span class=mi>5</span><span class=p>;</span><span class=o>++</span><span class=n>j</span><span class=p>)</span> <span class=n>cin</span><span class=o>&gt;&gt;</span><span class=n>s</span><span class=p>,</span> <span class=n>courseId</span><span class=p>.</span><span class=n>push_back</span><span class=p>(</span><span class=n>s</span><span class=p>);</span>
+            <span class=n>sort</span><span class=p>(</span><span class=n>courseId</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span><span class=n>courseId</span><span class=p>.</span><span class=n>end</span><span class=p>());</span>
+            <span class=n>s</span><span class=p>.</span><span class=n>clear</span><span class=p>();</span>
+            <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>j</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span><span class=n>j</span><span class=o>&lt;</span><span class=mi>5</span><span class=p>;</span><span class=o>++</span><span class=n>j</span><span class=p>)</span> <span class=n>s</span><span class=o>+=</span><span class=n>courseId</span><span class=p>[</span><span class=n>j</span><span class=p>];</span>
+            <span class=o>++</span><span class=n>studentNumber</span><span class=p>[</span><span class=n>s</span><span class=p>];</span>
+        <span class=p>}</span>
+        <span class=k>for</span><span class=p>(</span><span class=k>auto</span> <span class=n>it</span><span class=o>=</span><span class=n>studentNumber</span><span class=p>.</span><span class=n>begin</span><span class=p>();</span><span class=n>it</span><span class=o>!=</span><span class=n>studentNumber</span><span class=p>.</span><span class=n>end</span><span class=p>();</span><span class=o>++</span><span class=n>it</span><span class=p>)</span> <span class=k>if</span><span class=p>(</span><span class=n>it</span><span class=o>-&gt;</span><span class=n>second</span><span class=o>&gt;</span><span class=n>max</span><span class=p>)</span> <span class=n>max</span><span class=o>=</span><span class=n>it</span><span class=o>-&gt;</span><span class=n>second</span><span class=p>;</span>
+        <span class=k>for</span><span class=p>(</span><span class=k>auto</span> <span class=n>it</span><span class=o>=</span><span class=n>studentNumber</span><span class=p>.</span><span class=n>begin</span><span class=p>();</span><span class=n>it</span><span class=o>!=</span><span class=n>studentNumber</span><span class=p>.</span><span class=n>end</span><span class=p>();</span><span class=o>++</span><span class=n>it</span><span class=p>)</span> <span class=k>if</span><span class=p>(</span><span class=n>it</span><span class=o>-&gt;</span><span class=n>second</span><span class=o>==</span><span class=n>max</span><span class=p>)</span> <span class=n>total</span><span class=o>+=</span><span class=n>max</span><span class=p>;</span>
+        <span class=n>cout</span><span class=o>&lt;&lt;</span><span class=n>total</span><span class=o>&lt;&lt;</span><span class=n>endl</span><span class=p>;</span>
+    <span class=p>}</span>
+
+    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id=d--guessing-gamehttpsvjudgenetcontest446298problemd-uva-10530httpsvjudgenetproblemuva-10530origin>D <a href=https://vjudge.net/contest/446298#problem/D target=_blank rel="noopener noreffer"> Guessing Game</a> <a href=https://vjudge.net/problem/UVA-10530/origin target=_blank rel="noopener noreffer">UVA 10530</a></h3>
+<ul>
+<li>
+<p>題目</p>
+<ul>
+<li>猜數字，輸入會給數字並說目標是比該數大或小或是猜對了，若是該敘述錯誤則判斷為說謊</li>
+</ul>
+</li>
+<li>
+<p>作法</p>
+<ul>
+<li>紀錄目標數可能在的區間，判斷是否說謊</li>
+</ul>
+</li>
+<li>
+<p>Code</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=cp>#include</span> <span class=cpf>&lt;bits/stdc++.h&gt;</span><span class=cp>
+</span><span class=cp></span><span class=n>using</span> <span class=n>namespace</span> <span class=n>std</span><span class=p>;</span>
+<span class=kt>int</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+    <span class=kt>int</span> <span class=n>n</span><span class=p>;</span>
+    <span class=k>while</span><span class=p>(</span><span class=n>scanf</span><span class=p>(</span><span class=s>&#34;%d &#34;</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>n</span><span class=p>)</span> <span class=o>!=</span> <span class=n>EOF</span> <span class=o>&amp;&amp;</span> <span class=n>n</span> <span class=o>!=</span> <span class=mi>0</span><span class=p>)</span> <span class=p>{</span>
+        <span class=kt>int</span> <span class=n>s</span> <span class=o>=</span> <span class=mi>1</span><span class=p>,</span> <span class=n>e</span> <span class=o>=</span> <span class=mi>10</span><span class=p>;</span>
+        <span class=n>string</span> <span class=n>str</span><span class=p>;</span>
+        <span class=k>while</span><span class=p>(</span><span class=n>getline</span><span class=p>(</span><span class=n>cin</span><span class=p>,</span> <span class=n>str</span><span class=p>)</span> <span class=o>&amp;&amp;</span> <span class=n>str</span> <span class=o>!=</span> <span class=s>&#34;right on&#34;</span><span class=p>)</span> <span class=p>{</span>
+            <span class=k>if</span><span class=p>(</span><span class=n>str</span> <span class=o>==</span> <span class=s>&#34;too high&#34;</span><span class=p>)</span> <span class=n>e</span> <span class=o>=</span> <span class=n>min</span><span class=p>(</span><span class=n>e</span><span class=p>,</span> <span class=n>n</span> <span class=o>-</span> <span class=mi>1</span><span class=p>);</span>
+            <span class=k>else</span> <span class=k>if</span><span class=p>(</span><span class=n>str</span> <span class=o>==</span> <span class=s>&#34;too low&#34;</span><span class=p>)</span> <span class=n>s</span> <span class=o>=</span> <span class=n>max</span><span class=p>(</span><span class=n>s</span><span class=p>,</span> <span class=n>n</span> <span class=o>+</span> <span class=mi>1</span><span class=p>);</span>
+            <span class=n>scanf</span><span class=p>(</span><span class=s>&#34;%d &#34;</span><span class=p>,</span> <span class=o>&amp;</span><span class=n>n</span><span class=p>);</span>
+        <span class=p>}</span>
+        <span class=k>if</span><span class=p>(</span><span class=n>n</span> <span class=o>&gt;=</span> <span class=n>s</span> <span class=o>&amp;&amp;</span> <span class=n>n</span> <span class=o>&lt;=</span> <span class=n>e</span><span class=p>)</span> <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;Stan may be honest</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>;</span>
+        <span class=k>else</span> <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;Stan is dishonest</span><span class=se>\n</span><span class=s>&#34;</span><span class=p>;</span>
+    <span class=p>}</span>
+    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id=e--ancient-cipherhttpsvjudgenetcontest446298probleme-uva-1339httpsvjudgenetproblemuva-1339origin>E <a href=https://vjudge.net/contest/446298#problem/E target=_blank rel="noopener noreffer"> Ancient Cipher</a> <a href=https://vjudge.net/problem/UVA-1339/origin target=_blank rel="noopener noreffer">UVA 1339</a></h3>
+<ul>
+<li>
+<p>題目</p>
+<ul>
+<li>判斷第一串字串能否轉換成第二串字串(檢查字母出現頻路是否相同)</li>
+</ul>
+</li>
+<li>
+<p>作法</p>
+<ul>
+<li>紀錄子母出現次數並排序，檢查其出現頻率是否相同</li>
+</ul>
+</li>
+<li>
+<p>Code</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=cp>#include</span><span class=cpf>&lt;bits/stdc++.h&gt;</span><span class=cp>
+</span><span class=cp></span><span class=n>using</span> <span class=n>namespace</span> <span class=n>std</span><span class=p>;</span>
+<span class=kt>int</span> <span class=nf>main</span><span class=p>()</span>
+<span class=p>{</span>
+    <span class=kt>char</span> <span class=n>s1</span><span class=p>[</span><span class=mi>105</span><span class=p>];</span>
+    <span class=kt>char</span> <span class=n>s2</span><span class=p>[</span><span class=mi>105</span><span class=p>];</span>
+    <span class=kt>int</span> <span class=n>len</span><span class=p>;</span>
+    <span class=kt>bool</span> <span class=n>isOk</span><span class=p>;</span>
+    <span class=k>while</span><span class=p>(</span><span class=n>cin</span> <span class=o>&gt;&gt;</span> <span class=n>s1</span> <span class=o>&gt;&gt;</span> <span class=n>s2</span><span class=p>){</span>
+        <span class=n>isOk</span> <span class=o>=</span> <span class=nb>true</span><span class=p>;</span>
+        <span class=n>len</span> <span class=o>=</span> <span class=n>strlen</span><span class=p>(</span><span class=n>s1</span><span class=p>);</span>
+        <span class=kt>int</span> <span class=n>cnt1</span><span class=p>[</span><span class=mi>26</span><span class=p>]</span><span class=o>=</span><span class=p>{</span><span class=mi>0</span><span class=p>};</span>
+        <span class=kt>int</span> <span class=n>cnt2</span><span class=p>[</span><span class=mi>26</span><span class=p>]</span><span class=o>=</span><span class=p>{</span><span class=mi>0</span><span class=p>};</span>
+        <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>len</span><span class=p>;</span><span class=o>++</span><span class=n>i</span><span class=p>){</span>
+            <span class=kt>int</span> <span class=n>curC1</span> <span class=o>=</span> <span class=n>s1</span><span class=p>[</span><span class=n>i</span><span class=p>]</span> <span class=o>-</span> <span class=sc>&#39;A&#39;</span><span class=p>;</span>
+            <span class=kt>int</span> <span class=n>curC2</span> <span class=o>=</span> <span class=n>s2</span><span class=p>[</span><span class=n>i</span><span class=p>]</span> <span class=o>-</span> <span class=sc>&#39;A&#39;</span><span class=p>;</span>
+            <span class=n>cnt1</span><span class=p>[</span><span class=n>curC1</span><span class=p>]</span><span class=o>++</span><span class=p>;</span>
+            <span class=n>cnt2</span><span class=p>[</span><span class=n>curC2</span><span class=p>]</span><span class=o>++</span><span class=p>;</span>
+        <span class=p>}</span>
+        <span class=n>sort</span><span class=p>(</span><span class=n>cnt1</span><span class=p>,</span> <span class=n>cnt1</span> <span class=o>+</span> <span class=mi>26</span><span class=p>);</span>
+        <span class=n>sort</span><span class=p>(</span><span class=n>cnt2</span><span class=p>,</span> <span class=n>cnt2</span> <span class=o>+</span> <span class=mi>26</span><span class=p>);</span>
+
+        <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span> <span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=mi>26</span><span class=p>;</span><span class=o>++</span><span class=n>i</span><span class=p>){</span>
+            <span class=k>if</span><span class=p>(</span><span class=n>cnt1</span><span class=p>[</span><span class=n>i</span><span class=p>]</span> <span class=o>!=</span> <span class=n>cnt2</span><span class=p>[</span><span class=n>i</span><span class=p>]){</span>
+                <span class=n>isOk</span> <span class=o>=</span> <span class=nb>false</span><span class=p>;</span>
+                <span class=k>break</span><span class=p>;</span>
+            <span class=p>}</span>
+        <span class=p>}</span>
+        <span class=k>if</span><span class=p>(</span><span class=n>isOk</span><span class=p>)</span> <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;YES&#34;</span> <span class=o>&lt;&lt;</span><span class=n>endl</span><span class=p>;</span>
+        <span class=k>else</span> <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;NO&#34;</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span>
+    <span class=p>}</span>
+    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id=f--bridge-handshttpsvjudgenetcontest446298problemf-uva-555httpsvjudgenetproblemuva-555origin>F <a href=https://vjudge.net/contest/446298#problem/F target=_blank rel="noopener noreffer"> Bridge Hands</a> <a href=https://vjudge.net/problem/UVA-555/origin target=_blank rel="noopener noreffer">UVA 555</a></h3>
+<ul>
+<li>
+<p>題目</p>
+<ul>
+<li>輸入會表示從誰開始發牌及卡牌的資訊，輸出每個人的手牌並依照題目的規定排序手牌</li>
+</ul>
+</li>
+<li>
+<p>作法</p>
+<ul>
+<li>模擬發牌過程，並在最後為每個人牌好手牌</li>
+</ul>
+</li>
+<li>
+<p>Code</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=cp>#include</span><span class=cpf>&lt;bits/stdc++.h&gt;</span><span class=cp>
+</span><span class=cp></span><span class=n>using</span> <span class=n>namespace</span> <span class=n>std</span><span class=p>;</span>
+
+<span class=kt>int</span> <span class=nf>main</span><span class=p>(){</span>
+    <span class=kt>char</span> <span class=n>s</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span>
+    <span class=kt>char</span> <span class=n>sit</span><span class=p>[</span><span class=mi>4</span><span class=p>]</span><span class=o>=</span><span class=p>{</span><span class=sc>&#39;S&#39;</span><span class=p>,</span><span class=sc>&#39;W&#39;</span><span class=p>,</span><span class=sc>&#39;N&#39;</span><span class=p>,</span><span class=sc>&#39;E&#39;</span><span class=p>};</span>
+    <span class=k>while</span><span class=p>(</span><span class=n>cin</span><span class=o>&gt;&gt;</span><span class=n>s</span> <span class=o>&amp;&amp;</span> <span class=n>s</span><span class=o>!=</span><span class=sc>&#39;#&#39;</span><span class=p>){</span>
+        <span class=n>map</span><span class=o>&lt;</span><span class=kt>int</span><span class=p>,</span><span class=n>string</span><span class=o>&gt;</span> <span class=n>cards</span><span class=p>[</span><span class=mi>4</span><span class=p>];</span>
+        <span class=kt>int</span> <span class=n>start</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span>
+        <span class=n>string</span> <span class=n>str</span><span class=p>,</span><span class=n>line</span><span class=p>;</span>
+        <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span><span class=n>i</span><span class=o>&lt;</span><span class=mi>4</span><span class=p>;</span><span class=o>++</span><span class=n>i</span><span class=p>)</span> <span class=k>if</span><span class=p>(</span><span class=n>s</span><span class=o>==</span><span class=n>sit</span><span class=p>[</span><span class=n>i</span><span class=p>])</span> <span class=n>start</span><span class=o>=</span><span class=n>i</span><span class=p>;</span>
+        <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span><span class=n>i</span><span class=o>&lt;</span><span class=mi>2</span><span class=p>;</span><span class=o>++</span><span class=n>i</span><span class=p>){</span>
+            <span class=n>cin</span><span class=o>&gt;&gt;</span><span class=n>line</span><span class=p>;</span>
+            <span class=n>str</span><span class=o>+=</span><span class=n>line</span><span class=p>;</span>
+        <span class=p>}</span>
+        <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>j</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span><span class=n>j</span><span class=o>&lt;</span><span class=n>str</span><span class=p>.</span><span class=n>length</span><span class=p>();</span><span class=n>j</span><span class=o>+=</span><span class=mi>2</span><span class=p>){</span>
+            <span class=o>++</span><span class=n>start</span><span class=p>;</span>
+            <span class=k>if</span><span class=p>(</span><span class=n>start</span><span class=o>&gt;=</span><span class=mi>4</span><span class=p>)</span> <span class=n>start</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span>
+            <span class=n>string</span> <span class=n>t</span><span class=o>=</span><span class=s>&#34;  &#34;</span><span class=p>;</span>
+            <span class=n>t</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span><span class=o>=</span><span class=n>str</span><span class=p>[</span><span class=n>j</span><span class=p>];</span><span class=n>t</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span><span class=o>=</span><span class=n>str</span><span class=p>[</span><span class=n>j</span><span class=o>+</span><span class=mi>1</span><span class=p>];</span>
+            <span class=kt>int</span> <span class=n>id</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span>
+            <span class=kt>char</span> <span class=n>c</span><span class=o>=</span><span class=n>t</span><span class=p>[</span><span class=mi>0</span><span class=p>];</span>
+            <span class=k>if</span><span class=p>(</span><span class=n>c</span><span class=o>==</span><span class=sc>&#39;C&#39;</span><span class=p>)</span> <span class=n>id</span><span class=o>=</span><span class=mi>100</span><span class=p>;</span>
+            <span class=k>else</span> <span class=k>if</span><span class=p>(</span><span class=n>c</span><span class=o>==</span><span class=sc>&#39;D&#39;</span><span class=p>)</span> <span class=n>id</span><span class=o>=</span><span class=mi>200</span><span class=p>;</span>
+            <span class=k>else</span> <span class=k>if</span><span class=p>(</span><span class=n>c</span><span class=o>==</span><span class=sc>&#39;S&#39;</span><span class=p>)</span> <span class=n>id</span><span class=o>=</span><span class=mi>300</span><span class=p>;</span>
+            <span class=k>else</span> <span class=k>if</span><span class=p>(</span><span class=n>c</span><span class=o>==</span><span class=sc>&#39;H&#39;</span><span class=p>)</span> <span class=n>id</span><span class=o>=</span><span class=mi>400</span><span class=p>;</span>
+            <span class=n>c</span><span class=o>=</span><span class=n>t</span><span class=p>[</span><span class=mi>1</span><span class=p>];</span>
+            <span class=k>if</span><span class=p>(</span><span class=n>isdigit</span><span class=p>(</span><span class=n>c</span><span class=p>))</span> <span class=n>id</span><span class=o>+=</span><span class=p>(</span><span class=n>t</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span><span class=o>-</span><span class=sc>&#39;0&#39;</span><span class=p>);</span>
+            <span class=k>else</span> <span class=k>if</span><span class=p>(</span><span class=n>c</span><span class=o>==</span><span class=sc>&#39;T&#39;</span><span class=p>)</span> <span class=n>id</span><span class=o>+=</span><span class=mi>10</span><span class=p>;</span>
+            <span class=k>else</span> <span class=k>if</span><span class=p>(</span><span class=n>c</span><span class=o>==</span><span class=sc>&#39;J&#39;</span><span class=p>)</span> <span class=n>id</span><span class=o>+=</span><span class=mi>11</span><span class=p>;</span>
+            <span class=k>else</span> <span class=k>if</span><span class=p>(</span><span class=n>c</span><span class=o>==</span><span class=sc>&#39;Q&#39;</span><span class=p>)</span> <span class=n>id</span><span class=o>+=</span><span class=mi>12</span><span class=p>;</span>
+            <span class=k>else</span> <span class=k>if</span><span class=p>(</span><span class=n>c</span><span class=o>==</span><span class=sc>&#39;K&#39;</span><span class=p>)</span> <span class=n>id</span><span class=o>+=</span><span class=mi>13</span><span class=p>;</span>
+            <span class=k>else</span> <span class=k>if</span><span class=p>(</span><span class=n>c</span><span class=o>==</span><span class=sc>&#39;A&#39;</span><span class=p>)</span> <span class=n>id</span><span class=o>+=</span><span class=mi>14</span><span class=p>;</span>
+            <span class=n>cards</span><span class=p>[</span><span class=n>start</span><span class=p>][</span><span class=n>id</span><span class=p>]</span><span class=o>=</span><span class=n>t</span><span class=p>;</span>
+        <span class=p>};</span>
+        <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span><span class=n>i</span><span class=o>&lt;</span><span class=mi>4</span><span class=p>;</span><span class=o>++</span><span class=n>i</span><span class=p>){</span>
+            <span class=n>cout</span><span class=o>&lt;&lt;</span><span class=n>sit</span><span class=p>[</span><span class=n>i</span><span class=p>]</span><span class=o>&lt;&lt;</span><span class=sc>&#39;:&#39;</span><span class=p>;</span>
+            <span class=k>for</span><span class=p>(</span><span class=k>auto</span> <span class=n>it</span><span class=o>=</span><span class=n>cards</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>begin</span><span class=p>();</span><span class=n>it</span><span class=o>!=</span><span class=n>cards</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>end</span><span class=p>();</span><span class=o>++</span><span class=n>it</span><span class=p>)</span> <span class=n>cout</span><span class=o>&lt;&lt;</span><span class=s>&#34; &#34;</span><span class=o>&lt;&lt;</span><span class=n>it</span><span class=o>-&gt;</span><span class=n>second</span><span class=p>;</span>
+        <span class=n>cout</span><span class=o>&lt;&lt;</span><span class=n>endl</span><span class=p>;</span>
+        <span class=p>}</span>
+    <span class=p>}</span>
+    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id=g--vitos-familyhttpsvjudgenetcontest446298problemg-uva-10041httpsvjudgenetproblemuva-10041origin>G <a href=https://vjudge.net/contest/446298#problem/G target=_blank rel="noopener noreffer"> Vito&rsquo;s Family</a> <a href=https://vjudge.net/problem/UVA-10041/origin target=_blank rel="noopener noreffer">UVA 10041</a></h3>
+<ul>
+<li>
+<p>題目</p>
+<ul>
+<li>找到從某棟房子出發，拜訪每一戶的最短距離</li>
+</ul>
+</li>
+<li>
+<p>作法</p>
+<ul>
+<li>找出中位數，算出所有距離的和</li>
+</ul>
+</li>
+<li>
+<p>Code</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=cp>#include</span><span class=cpf>&lt;bits/stdc++.h&gt;</span><span class=cp>
+</span><span class=cp></span><span class=n>using</span> <span class=n>namespace</span> <span class=n>std</span><span class=p>;</span>
+<span class=kt>int</span> <span class=nf>main</span><span class=p>(){</span>
+    <span class=kt>int</span> <span class=n>t</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span>
+    <span class=n>cin</span><span class=o>&gt;&gt;</span><span class=n>t</span><span class=p>;</span>
+    <span class=k>while</span><span class=p>(</span><span class=n>t</span><span class=o>--</span><span class=p>){</span>
+        <span class=kt>int</span> <span class=n>N</span><span class=o>=</span><span class=mi>0</span><span class=p>,</span><span class=n>s</span><span class=p>,</span><span class=n>house</span><span class=p>,</span><span class=n>dis</span><span class=o>=</span><span class=mi>0</span><span class=p>,</span><span class=n>size</span><span class=p>;</span>
+        <span class=n>cin</span><span class=o>&gt;&gt;</span><span class=n>N</span><span class=p>;</span>
+        <span class=n>vector</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;</span> <span class=n>street</span><span class=p>;</span>
+        <span class=k>while</span><span class=p>(</span><span class=n>N</span><span class=o>--</span><span class=p>){</span>
+            <span class=n>cin</span><span class=o>&gt;&gt;</span><span class=n>s</span><span class=p>;</span>
+            <span class=n>street</span><span class=p>.</span><span class=n>push_back</span><span class=p>(</span><span class=n>s</span><span class=p>);</span>
+        <span class=p>}</span>
+        <span class=n>sort</span><span class=p>(</span><span class=n>street</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span><span class=n>street</span><span class=p>.</span><span class=n>end</span><span class=p>());</span>
+        <span class=n>size</span><span class=o>=</span><span class=n>street</span><span class=p>.</span><span class=n>size</span><span class=p>();</span>
+        <span class=n>house</span><span class=o>=</span><span class=n>street</span><span class=p>[</span><span class=n>size</span><span class=o>/</span><span class=mi>2</span><span class=p>];</span>
+        <span class=k>for</span><span class=p>(</span><span class=k>auto</span> <span class=nl>i</span><span class=p>:</span><span class=n>street</span><span class=p>)</span> <span class=n>dis</span><span class=o>+=</span><span class=n>abs</span><span class=p>(</span><span class=n>house</span><span class=o>-</span><span class=n>i</span><span class=p>);</span>
+        <span class=n>cout</span><span class=o>&lt;&lt;</span><span class=n>dis</span><span class=o>&lt;&lt;</span><span class=n>endl</span><span class=p>;</span>
+    <span class=p>}</span>
+    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id=h--shoemakers-problemhttpsvjudgenetcontest446298problemh-uva-10026httpsvjudgenetproblemuva-10026origin>H <a href=https://vjudge.net/contest/446298#problem/H target=_blank rel="noopener noreffer"> Shoemaker&rsquo;s Problem</a> <a href=https://vjudge.net/problem/UVA-10026/origin target=_blank rel="noopener noreffer">UVA 10026</a></h3>
+<ul>
+<li>
+<p>題目</p>
+<ul>
+<li>輸入會提供每項工作的編號、天數及罰金，算出能使罰金最少的工作順序</li>
+</ul>
+</li>
+<li>
+<p>作法</p>
+<ul>
+<li>算出每個工作的權重(罰金/天數)，並由大到小排序</li>
+</ul>
+</li>
+<li>
+<p>Code</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=cp>#include</span><span class=cpf>&lt;bits/stdc++.h&gt;</span><span class=cp>
+</span><span class=cp></span><span class=n>using</span> <span class=n>namespace</span> <span class=n>std</span><span class=p>;</span>
+<span class=k>typedef</span> <span class=k>struct</span><span class=p>{</span>
+    <span class=kt>double</span> <span class=n>cp</span><span class=p>;</span>
+    <span class=kt>int</span> <span class=n>num</span><span class=p>;</span>
+<span class=p>}</span><span class=n>work</span><span class=p>;</span>
+<span class=kt>bool</span> <span class=nf>cmp</span><span class=p>(</span><span class=n>work</span> <span class=n>a</span><span class=p>,</span><span class=n>work</span> <span class=n>b</span><span class=p>){</span>
+    <span class=k>if</span><span class=p>(</span><span class=n>a</span><span class=p>.</span><span class=n>cp</span><span class=o>&gt;</span><span class=n>b</span><span class=p>.</span><span class=n>cp</span><span class=p>)</span> <span class=k>return</span> <span class=nb>true</span><span class=p>;</span>
+    <span class=k>else</span> <span class=k>return</span> <span class=nb>false</span><span class=p>;</span>
+<span class=p>}</span>
+<span class=kt>int</span> <span class=nf>main</span><span class=p>(){</span>
+    <span class=kt>int</span> <span class=n>t</span><span class=p>,</span><span class=n>N</span><span class=p>;</span>
+    <span class=n>string</span> <span class=n>s</span><span class=p>;</span>
+    <span class=n>cin</span><span class=o>&gt;&gt;</span><span class=n>t</span><span class=p>;</span>
+    <span class=n>getline</span><span class=p>(</span><span class=n>cin</span><span class=p>,</span><span class=n>s</span><span class=p>);</span>
+    <span class=n>getline</span><span class=p>(</span><span class=n>cin</span><span class=p>,</span><span class=n>s</span><span class=p>);</span>
+    <span class=k>while</span><span class=p>(</span><span class=n>t</span><span class=o>--</span><span class=p>){</span>
+        <span class=n>cin</span><span class=o>&gt;&gt;</span><span class=n>N</span><span class=p>;</span>
+        <span class=n>work</span> <span class=n>w</span><span class=p>[</span><span class=n>N</span><span class=p>];</span>
+        <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span><span class=n>i</span><span class=o>&lt;</span><span class=n>N</span><span class=p>;</span><span class=o>++</span><span class=n>i</span><span class=p>){</span>
+            <span class=kt>double</span> <span class=n>time</span><span class=p>,</span><span class=n>fine</span><span class=p>,</span><span class=n>cp</span><span class=p>;</span>
+            <span class=n>cin</span><span class=o>&gt;&gt;</span><span class=n>time</span><span class=o>&gt;&gt;</span><span class=n>fine</span><span class=p>;</span>
+            <span class=n>cp</span><span class=o>=</span><span class=n>fine</span><span class=o>/</span><span class=n>time</span><span class=p>;</span>
+            <span class=n>w</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>cp</span><span class=o>=</span><span class=n>cp</span><span class=p>;</span>
+            <span class=n>w</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>num</span><span class=o>=</span><span class=n>i</span><span class=o>+</span><span class=mi>1</span><span class=p>;</span>
+        <span class=p>}</span>
+        <span class=n>sort</span><span class=p>(</span><span class=n>w</span><span class=p>,</span><span class=n>w</span><span class=o>+</span><span class=n>N</span><span class=p>,</span><span class=n>cmp</span><span class=p>);</span>
+        <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span><span class=n>i</span><span class=o>&lt;</span><span class=n>N</span><span class=o>-</span><span class=mi>1</span><span class=p>;</span><span class=o>++</span><span class=n>i</span><span class=p>)</span> <span class=n>cout</span><span class=o>&lt;&lt;</span><span class=n>w</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>num</span><span class=o>&lt;&lt;</span><span class=s>&#34; &#34;</span><span class=p>;</span>
+        <span class=n>cout</span><span class=o>&lt;&lt;</span><span class=n>w</span><span class=p>[</span><span class=n>N</span><span class=o>-</span><span class=mi>1</span><span class=p>].</span><span class=n>num</span><span class=o>&lt;&lt;</span><span class=n>endl</span><span class=p>;</span>
+        <span class=k>if</span><span class=p>(</span><span class=n>t</span><span class=o>&gt;</span><span class=mi>0</span><span class=p>)</span> <span class=n>cout</span><span class=o>&lt;&lt;</span><span class=n>endl</span><span class=p>;</span>
+    <span class=p>}</span>
+    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id=i-the-bus-driver-problemhttpsvjudgenetcontest446298problemi-uva-11389httpsvjudgenetproblemuva-11389origin>I <a href=https://vjudge.net/contest/446298#problem/I target=_blank rel="noopener noreffer">The Bus Driver Problem</a> <a href=https://vjudge.net/problem/UVA-11389/origin target=_blank rel="noopener noreffer">UVA 11389</a></h3>
+<ul>
+<li>
+<p>題目</p>
+<ul>
+<li>輸入會給公車牌班的時數，若超過規定時數就要給加班費，找出最少加班費的安排</li>
+</ul>
+</li>
+<li>
+<p>作法</p>
+<ul>
+<li>先將時數排序過，再將一組時數顛倒過後配對在一起並相加，計算出加班費</li>
+</ul>
+</li>
+<li>
+<p>Code</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=cp>#include</span><span class=cpf>&lt;bits/stdc++.h&gt;</span><span class=cp>
+</span><span class=cp></span><span class=n>using</span> <span class=n>namespace</span> <span class=n>std</span><span class=p>;</span>
+<span class=kt>int</span> <span class=nf>main</span><span class=p>(){</span>
+    <span class=kt>int</span> <span class=n>n</span><span class=p>,</span><span class=n>d</span><span class=p>,</span><span class=n>r</span><span class=p>;</span>
+    <span class=k>while</span><span class=p>(</span><span class=n>cin</span><span class=o>&gt;&gt;</span><span class=n>n</span><span class=o>&gt;&gt;</span><span class=n>d</span><span class=o>&gt;&gt;</span><span class=n>r</span> <span class=o>&amp;&amp;</span> <span class=n>n</span> <span class=o>&amp;&amp;</span> <span class=n>d</span> <span class=o>&amp;&amp;</span> <span class=n>r</span><span class=p>){</span>
+        <span class=kt>int</span> <span class=n>m</span><span class=p>,</span><span class=n>a</span><span class=p>,</span><span class=n>time</span><span class=o>=</span><span class=mi>0</span><span class=p>,</span><span class=n>auth</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span>
+        <span class=n>vector</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;</span> <span class=n>mor</span><span class=p>;</span>
+        <span class=n>vector</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;</span> <span class=n>aft</span><span class=p>;</span>
+        <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span><span class=n>i</span><span class=o>&lt;</span><span class=n>n</span><span class=p>;</span><span class=o>++</span><span class=n>i</span><span class=p>)</span> <span class=n>cin</span><span class=o>&gt;&gt;</span><span class=n>m</span><span class=p>,</span><span class=n>mor</span><span class=p>.</span><span class=n>push_back</span><span class=p>(</span><span class=n>m</span><span class=p>);</span>
+        <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span><span class=n>i</span><span class=o>&lt;</span><span class=n>n</span><span class=p>;</span><span class=o>++</span><span class=n>i</span><span class=p>)</span> <span class=n>cin</span><span class=o>&gt;&gt;</span><span class=n>a</span><span class=p>,</span><span class=n>aft</span><span class=p>.</span><span class=n>push_back</span><span class=p>(</span><span class=n>a</span><span class=p>);</span>
+        <span class=n>sort</span><span class=p>(</span><span class=n>mor</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span><span class=n>mor</span><span class=p>.</span><span class=n>end</span><span class=p>());</span>
+        <span class=n>sort</span><span class=p>(</span><span class=n>aft</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span><span class=n>aft</span><span class=p>.</span><span class=n>end</span><span class=p>());</span>
+        <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span><span class=n>i</span><span class=o>&lt;</span><span class=n>n</span><span class=p>;</span><span class=o>++</span><span class=n>i</span><span class=p>){</span>
+            <span class=kt>int</span> <span class=n>total</span><span class=o>=</span><span class=n>mor</span><span class=p>[</span><span class=n>i</span><span class=p>]</span><span class=o>+</span><span class=n>aft</span><span class=p>[</span><span class=n>n</span><span class=o>-</span><span class=n>i</span><span class=o>-</span><span class=mi>1</span><span class=p>];</span>
+            <span class=k>if</span><span class=p>(</span><span class=n>total</span><span class=o>&gt;</span><span class=n>d</span><span class=p>)</span> <span class=n>auth</span><span class=o>+=</span><span class=p>(</span><span class=n>total</span><span class=o>-</span><span class=n>d</span><span class=p>)</span><span class=o>*</span><span class=n>r</span><span class=p>;</span>
+        <span class=p>}</span>
+        <span class=n>cout</span><span class=o>&lt;&lt;</span><span class=n>auth</span><span class=o>&lt;&lt;</span><span class=n>endl</span><span class=p>;</span>
+    <span class=p>}</span>
+    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id=j-watering-grasshttpsvjudgenetcontest446298problemj-uva-10382httpsvjudgenetproblemuva-10382origin>J <a href=https://vjudge.net/contest/446298#problem/J target=_blank rel="noopener noreffer">Watering Grass</a> <a href=https://vjudge.net/problem/UVA-10382/origin target=_blank rel="noopener noreffer">UVA 10382</a></h3>
+<ul>
+<li>
+<p>題目</p>
+<ul>
+<li>找出最小需要幾個 sprinkler，灑水範圍才能覆蓋整個草坪</li>
+</ul>
+</li>
+<li>
+<p>作法</p>
+<ul>
+<li>轉成一維，算區間覆蓋</li>
+<li>貪心法</li>
+<li>區間覆蓋</li>
+</ul>
+</li>
+<li>
+<p>Code</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=cp>#include</span> <span class=cpf>&lt;bits/stdc++.h&gt;</span><span class=cp>
+</span><span class=cp></span><span class=n>using</span> <span class=n>namespace</span> <span class=n>std</span><span class=p>;</span>
+<span class=cp>#define F first
+</span><span class=cp>#define S second
+</span><span class=cp></span>
+<span class=kt>bool</span> <span class=nf>cmp</span><span class=p>(</span><span class=n>pair</span><span class=o>&lt;</span><span class=kt>double</span><span class=p>,</span> <span class=kt>double</span><span class=o>&gt;</span> <span class=n>a</span><span class=p>,</span> <span class=n>pair</span><span class=o>&lt;</span><span class=kt>double</span><span class=p>,</span> <span class=kt>double</span><span class=o>&gt;</span> <span class=n>b</span><span class=p>)</span> <span class=p>{</span>
+    <span class=k>if</span> <span class=p>(</span><span class=n>a</span><span class=p>.</span><span class=n>first</span> <span class=o>==</span> <span class=n>b</span><span class=p>.</span><span class=n>first</span><span class=p>)</span>
+        <span class=k>return</span> <span class=n>a</span><span class=p>.</span><span class=n>second</span> <span class=o>&gt;</span> <span class=n>b</span><span class=p>.</span><span class=n>second</span><span class=p>;</span>
+    <span class=k>else</span>
+        <span class=k>return</span> <span class=n>a</span><span class=p>.</span><span class=n>first</span> <span class=o>&lt;</span> <span class=n>b</span><span class=p>.</span><span class=n>first</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=kt>int</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+    <span class=kt>int</span> <span class=n>n</span><span class=p>;</span>
+    <span class=kt>double</span> <span class=n>p</span><span class=p>,</span> <span class=n>r</span><span class=p>;</span> <span class=c1>// position, radius
+</span><span class=c1></span>    <span class=kt>double</span> <span class=n>l</span><span class=p>,</span> <span class=n>w</span><span class=p>,</span> <span class=n>dx</span><span class=p>;</span>
+
+    <span class=k>while</span> <span class=p>(</span><span class=n>cin</span> <span class=o>&gt;&gt;</span> <span class=n>n</span> <span class=o>&gt;&gt;</span> <span class=n>l</span> <span class=o>&gt;&gt;</span> <span class=n>w</span><span class=p>)</span> <span class=p>{</span>
+        <span class=n>w</span> <span class=o>/=</span> <span class=mf>2.0</span><span class=p>;</span>
+        <span class=n>vector</span><span class=o>&lt;</span><span class=n>pair</span><span class=o>&lt;</span><span class=kt>double</span><span class=p>,</span> <span class=kt>double</span><span class=o>&gt;</span> <span class=o>&gt;</span> <span class=n>v</span><span class=p>;</span>
+        <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span> <span class=n>i</span><span class=o>&lt;</span><span class=n>n</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span> <span class=p>{</span>
+            <span class=n>cin</span> <span class=o>&gt;&gt;</span> <span class=n>p</span> <span class=o>&gt;&gt;</span> <span class=n>r</span><span class=p>;</span>
+            <span class=k>if</span> <span class=p>(</span><span class=n>r</span> <span class=o>&gt;</span> <span class=n>w</span><span class=p>){</span> <span class=c1>//排除沒用的噴水頭
+</span><span class=c1></span>                <span class=n>dx</span> <span class=o>=</span> <span class=n>sqrt</span><span class=p>(</span><span class=n>r</span><span class=o>*</span><span class=n>r</span> <span class=o>-</span> <span class=n>w</span><span class=o>*</span><span class=n>w</span><span class=p>);</span>
+                <span class=n>v</span><span class=p>.</span><span class=n>push_back</span><span class=p>({</span><span class=n>p</span><span class=o>-</span><span class=n>dx</span><span class=p>,</span> <span class=n>p</span><span class=o>+</span><span class=n>dx</span><span class=p>});</span> <span class=c1>//轉換成區間覆蓋問題
+</span><span class=c1></span>            <span class=p>}</span>
+        <span class=p>}</span>
+        <span class=n>sort</span><span class=p>(</span><span class=n>v</span><span class=p>.</span><span class=n>begin</span><span class=p>(),</span> <span class=n>v</span><span class=p>.</span><span class=n>end</span><span class=p>(),</span> <span class=n>cmp</span><span class=p>);</span>
+
+        <span class=kt>int</span> <span class=n>ans</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+        <span class=kt>double</span> <span class=n>right</span> <span class=o>=</span> <span class=mf>0.0</span><span class=p>;</span>
+        <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>v</span><span class=p>.</span><span class=n>size</span><span class=p>();</span> <span class=n>i</span><span class=o>++</span><span class=p>){</span>
+            <span class=k>if</span> <span class=p>(</span><span class=n>v</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>F</span> <span class=o>&gt;</span> <span class=n>right</span><span class=p>)</span> <span class=k>break</span><span class=p>;</span>
+            <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>j</span> <span class=o>=</span> <span class=n>i</span><span class=o>+</span><span class=mi>1</span><span class=p>;</span> <span class=n>j</span> <span class=o>&lt;</span> <span class=n>v</span><span class=p>.</span><span class=n>size</span><span class=p>()</span> <span class=o>&amp;&amp;</span> <span class=n>v</span><span class=p>[</span><span class=n>j</span><span class=p>].</span><span class=n>F</span> <span class=o>&lt;=</span> <span class=n>right</span><span class=p>;</span> <span class=n>j</span><span class=o>++</span><span class=p>){</span>
+                <span class=k>if</span> <span class=p>(</span><span class=n>v</span><span class=p>[</span><span class=n>j</span><span class=p>].</span><span class=n>S</span> <span class=o>&gt;</span> <span class=n>v</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>S</span><span class=p>){</span>
+                    <span class=n>i</span> <span class=o>=</span> <span class=n>j</span><span class=p>;</span>
+                <span class=p>}</span>
+            <span class=p>}</span>
+            <span class=n>ans</span><span class=o>++</span><span class=p>;</span>
+            <span class=n>right</span> <span class=o>=</span> <span class=n>v</span><span class=p>[</span><span class=n>i</span><span class=p>].</span><span class=n>S</span><span class=p>;</span>
+            <span class=k>if</span> <span class=p>(</span><span class=n>right</span> <span class=o>&gt;=</span> <span class=n>l</span><span class=p>)</span> <span class=k>break</span><span class=p>;</span>
+        <span class=p>}</span>
+
+        <span class=k>if</span> <span class=p>(</span><span class=n>right</span> <span class=o>&gt;=</span> <span class=n>l</span><span class=p>)</span> <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>ans</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span>
+        <span class=k>else</span> <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span>
+    <span class=p>}</span>
+    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id=k--ultra-quicksorthttpsvjudgenetcontest446298problemk-uva-10810httpsvjudgenetproblemuva-10810origin>K <a href=https://vjudge.net/contest/446298#problem/K target=_blank rel="noopener noreffer"> Ultra-QuickSort</a> <a href=https://vjudge.net/problem/UVA-10810/origin target=_blank rel="noopener noreffer">UVA 10810</a></h3>
+<ul>
+<li>
+<p>題目</p>
+<ul>
+<li>算出最小交換次數</li>
+</ul>
+</li>
+<li>
+<p>作法</p>
+<ul>
+<li>merge soert</li>
+<li>BIT</li>
+</ul>
+</li>
+<li>
+<p>Code</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=cp>#include</span> <span class=cpf>&lt;bits/stdc++.h&gt;</span><span class=cp>
+</span><span class=cp></span><span class=n>using</span> <span class=n>namespace</span> <span class=n>std</span><span class=p>;</span>
+<span class=kt>long</span> <span class=kt>long</span> <span class=n>ans</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+<span class=kt>long</span> <span class=kt>long</span> <span class=n>a</span><span class=p>[</span><span class=mi>500005</span><span class=p>];</span>
+<span class=kt>void</span> <span class=nf>mergeSort</span><span class=p>(</span><span class=kt>long</span> <span class=kt>long</span> <span class=o>*</span><span class=n>arr</span><span class=p>,</span> <span class=kt>int</span> <span class=n>len</span><span class=p>)</span> <span class=p>{</span>
+    <span class=k>if</span><span class=p>(</span><span class=n>len</span> <span class=o>&lt;=</span> <span class=mi>1</span><span class=p>)</span> <span class=k>return</span><span class=p>;</span>
+    <span class=kt>int</span> <span class=n>leftLen</span> <span class=o>=</span> <span class=n>len</span> <span class=o>/</span> <span class=mi>2</span><span class=p>,</span> <span class=n>rightLen</span> <span class=o>=</span> <span class=n>len</span> <span class=o>-</span> <span class=n>leftLen</span><span class=p>;</span>
+    <span class=kt>long</span> <span class=kt>long</span> <span class=o>*</span><span class=n>leftArr</span> <span class=o>=</span> <span class=n>arr</span><span class=p>,</span> <span class=o>*</span><span class=n>rightArr</span> <span class=o>=</span> <span class=n>arr</span> <span class=o>+</span> <span class=n>leftLen</span><span class=p>;</span>
+    <span class=n>mergeSort</span><span class=p>(</span><span class=n>leftArr</span><span class=p>,</span> <span class=n>leftLen</span><span class=p>);</span>
+    <span class=n>mergeSort</span><span class=p>(</span><span class=n>rightArr</span><span class=p>,</span> <span class=n>rightLen</span><span class=p>);</span>
+    <span class=k>static</span> <span class=kt>long</span> <span class=kt>long</span> <span class=n>tmp</span><span class=p>[</span><span class=mi>500005</span><span class=p>];</span>
+    <span class=kt>long</span> <span class=kt>long</span> <span class=n>tmpLen</span> <span class=o>=</span> <span class=mi>0</span><span class=p>,</span> <span class=n>l</span> <span class=o>=</span> <span class=mi>0</span><span class=p>,</span> <span class=n>r</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+    <span class=k>while</span><span class=p>(</span><span class=n>l</span> <span class=o>&lt;</span> <span class=n>leftLen</span> <span class=o>&amp;&amp;</span> <span class=n>r</span> <span class=o>&lt;</span> <span class=n>rightLen</span><span class=p>)</span> <span class=p>{</span>
+        <span class=k>if</span><span class=p>(</span><span class=n>leftArr</span><span class=p>[</span><span class=n>l</span><span class=p>]</span> <span class=o>&lt;</span> <span class=n>rightArr</span><span class=p>[</span><span class=n>r</span><span class=p>])</span> <span class=n>tmp</span><span class=p>[</span><span class=n>tmpLen</span><span class=o>++</span><span class=p>]</span> <span class=o>=</span> <span class=n>leftArr</span><span class=p>[</span><span class=n>l</span><span class=o>++</span><span class=p>];</span>
+        <span class=k>else</span> <span class=p>{</span>
+            <span class=n>tmp</span><span class=p>[</span><span class=n>tmpLen</span><span class=o>++</span><span class=p>]</span> <span class=o>=</span> <span class=n>rightArr</span><span class=p>[</span><span class=n>r</span><span class=o>++</span><span class=p>];</span>
+            <span class=n>ans</span> <span class=o>+=</span> <span class=n>leftLen</span> <span class=o>-</span> <span class=n>l</span><span class=p>;</span>
+        <span class=p>}</span>
+    <span class=p>}</span>
+    <span class=k>while</span><span class=p>(</span><span class=n>l</span> <span class=o>&lt;</span> <span class=n>leftLen</span><span class=p>)</span> <span class=n>tmp</span><span class=p>[</span><span class=n>tmpLen</span><span class=o>++</span><span class=p>]</span> <span class=o>=</span> <span class=n>leftArr</span><span class=p>[</span><span class=n>l</span><span class=o>++</span><span class=p>];</span>
+    <span class=k>while</span><span class=p>(</span><span class=n>r</span> <span class=o>&lt;</span> <span class=n>rightLen</span><span class=p>)</span> <span class=n>tmp</span><span class=p>[</span><span class=n>tmpLen</span><span class=o>++</span><span class=p>]</span> <span class=o>=</span> <span class=n>rightArr</span><span class=p>[</span><span class=n>r</span><span class=o>++</span><span class=p>];</span>
+    <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>tmpLen</span><span class=p>;</span> <span class=o>++</span><span class=n>i</span><span class=p>)</span> <span class=n>arr</span><span class=p>[</span><span class=n>i</span><span class=p>]</span> <span class=o>=</span> <span class=n>tmp</span><span class=p>[</span><span class=n>i</span><span class=p>];</span>
+<span class=p>}</span>
+<span class=kt>int</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+    <span class=kt>int</span> <span class=n>n</span><span class=p>;</span>
+    <span class=k>while</span><span class=p>(</span><span class=n>cin</span> <span class=o>&gt;&gt;</span> <span class=n>n</span> <span class=o>&amp;&amp;</span> <span class=n>n</span><span class=p>)</span> <span class=p>{</span>
+        <span class=n>ans</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+        <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span> <span class=n>i</span> <span class=o>&lt;</span> <span class=n>n</span><span class=p>;</span> <span class=o>++</span><span class=n>i</span><span class=p>)</span> <span class=n>cin</span> <span class=o>&gt;&gt;</span> <span class=n>a</span><span class=p>[</span><span class=n>i</span><span class=p>];</span>
+        <span class=n>mergeSort</span><span class=p>(</span><span class=n>a</span><span class=p>,</span> <span class=n>n</span><span class=p>);</span>
+        <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>ans</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span>
+    <span class=p>}</span>
+    <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span></span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md><span>
+<a class=link-to-markdown href=/starcoder%E6%9A%91%E8%A8%93week1/index.md target=_blank></a>
+</span></div>
+<div class=post-info-share>
+<span></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/starcoder%E6%9A%91%E8%A8%93/>Starcoder暑訓</a>,&nbsp;<a href=/tags/c++/>C++</a></section>
+<section>
+<span><a href=javascript:void(0); onclick=window.history.back()></a></span>&nbsp;|&nbsp;<span><a href=/></a></span>
+</section>
+</div>
+<div class=post-nav><a href=/learninggit01/ class=prev rel=prev title=LearningGit01><i class="fas fa-angle-left fa-fw"></i>LearningGit01</a></div>
+</div>
+</article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>饅頭</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title>
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title>
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><script type=text/javascript src=https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"",maxShownLines:5},comment:{},data:{"id-1":"饅頭的部落格","id-2":"饅頭的部落格"},typeit:{cursorChar:"|",cursorSpeed:1e3,data:{"id-1":["id-1"],"id-2":["id-2"]},duration:-1,speed:100}}</script><script type=text/javascript src=/js/theme.min.js></script></body>
+</html>
