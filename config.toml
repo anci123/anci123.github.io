@@ -1,4 +1,4 @@
-baseURL = ""
+baseURL = "http://blog.manto-meow.tk/"
 # [en, zh-cn, fr, zh-tw ,...] 設置默認語言
 defaultContentLanguage = "zh-tw"
 title = "饅頭的部落格"
