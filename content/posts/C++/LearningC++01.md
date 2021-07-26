@@ -1,18 +1,18 @@
 ---
 title: "LearningC++01"
 date: 2021-07-25T15:33:31+08:00
+tags: ["C++"]
+categories: ["Language"]
 ---
 
 # C++學習筆記
-
-[toc]
 
 ## 標頭檔
 
 * **<bits/stdc++.h>** 是萬能標頭檔，有了他就不用寫其他的標頭檔
 * **using name std;** 有了它就可以不用一直帶上函式庫的全名(std::)
 
-```c++=
+```c++
 #include<bits/stdc++.h>
 using namespace std;
 ```
@@ -23,7 +23,7 @@ using namespace std;
 * cin.tie 這是將 cin 跟 cout 綁定的意思
 * endl 是 換行 加上 flush(清空緩衝區)，換成'\n'，速度會快上許多
 
-```C++=
+```C++
 ios::sync_with_stdio(0);
 cin.tie(0); 
 cout<<"Hello"<<'\n';
@@ -37,7 +37,7 @@ cout<<"Hello"<<'\n';
 
   * int -> string
 
-  ```C++=
+  ```C++
   string convert;
   stringstream ss;
   int number=123456;
@@ -47,7 +47,7 @@ cout<<"Hello"<<'\n';
 
   * string -> int
 
-  ```C++=
+  ```C++
   string numstr="123";
   int num;
   stringstream ss;
@@ -57,14 +57,14 @@ cout<<"Hello"<<'\n';
 
   * 清空
 
-  ```C++=
+  ```C++
   ss.str("");
   ss.claer;
   ```
 
   * 檢查是否轉型成功
 
-  ```C++=
+  ```C++
   stringstream ss("12.0505");
   double d;
   ss<<d;
@@ -74,7 +74,7 @@ cout<<"Hello"<<'\n';
 
   * 一串字串中有多組int(用空格切字串)
 
-  ```C++=
+  ```C++
   string s="13 -456 6566 121 48";
   stringstream ss(s);
   int a;
@@ -92,7 +92,7 @@ cout<<"Hello"<<'\n';
   * **\* 是**所有**
   * **\*[^]** 是跳過符合的字串
 
-  ```c++=
+  ```c++
   char str[10];
   char st2[10];
   cin>>str;
@@ -102,7 +102,7 @@ cout<<"Hello"<<'\n';
   //output:123
   ```
 
-  ```C++=
+  ```C++
   char str[10];char st2[10];cin>>str;sscanf(str,"%*[^-]-%s",st2);cout<<st2<<endl;//input:123-ABC//output:ABC
   ```
 
@@ -113,7 +113,7 @@ cout<<"Hello"<<'\n';
 1. setw(n)
    * n規定輸出的格數，若n小於輸出的位數則會被忽視
 
-```C++=
+```C++
 cout<<setw(3)<<1<<endl;
 //  1
 cout<<setw(3)<<12345<<endl;
@@ -122,7 +122,7 @@ cout<<setw(3)<<12345<<endl;
 
 2. setfill(char)
 
-```C++=
+```C++
     string s="qwe";
     cout<<setw(5)<<setfill('*')<<s;
     //**qwe

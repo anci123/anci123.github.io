@@ -1,19 +1,18 @@
 ---
 title: "Program1"
 date: 2021-07-25T15:00:36+08:00
+tags: ["C"]
+categories: ["Language"]
 ---
 
 # 程式設計(一)
 
-:::warning
-
 ## **注意事項**
 
-* main函式先加 <font color=#0000FF>return 0</font>
+* main函式先加 <font color=#00FFFF>return 0</font>
 * 先初始化變數
-* 使用 <font color=#0000FF>\++i, --i</font> 而不是 i++
-* scanf("%d",<font color=#0000FF>&</font>a);
-  :::
+* 使用 <font color=#00FFFF>\++i, --i</font> 而不是 i++
+* scanf("%d",<font color=#00FFFF>&</font>a);
 
 #  Arithmetic 計算
 
@@ -53,7 +52,7 @@ date: 2021-07-25T15:00:36+08:00
 * strtod: `double strtod(const char *nptr, char **endptr);`
 * strtol: `long int strtol(const char *nptr, char **endptr, int base);`
 
-```C=
+```C
 int main(){
    char str[30] = "20.30300 This is test";
    char **ptr;

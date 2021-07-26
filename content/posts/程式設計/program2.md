@@ -1,53 +1,40 @@
 ---
 title: "Program2"
-date: 2021-07-25T15:07:35+08:00
+date: 2021-07-25T15:00:36+08:00
+tags: ["C"]
+categories: ["Language"]
 ---
----
-title: "Program2"
-tags: program
-categories: learning
-date: 2021-07-25T14:06:13+08:00
+# struct
 
----
+## 解決 alignment 的問題
 
-title: 程式設計（二）
+1. ```c
+   __attribute__((packed))
+   ```
 
-tags: program
----
-
-## 目錄
-
-[toc]
-
-### struct
-
-#### 解決 alignment 的問題
-
-1. `__attribute__((packed))`
-
-2. ```c=
+2. ```c
    #pragma pack(push, 1)
    #pragma pack(pop)
    ```
 
-3. ```c=
+3. ```c
    #pragma pack(push)
    #pragma pack(1)
    #pragma pack(pop)
    ```
 
-### File
+# File
 
-#### fread
+## fread
 
 1. header: <stdio.h>
 2. `size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);`
 3. 務必用型別為size_t 的變數去接回傳值
 4. size 為 1 時，將回傳讀入多少 bytes
 
-### Program Arguements
+# Program Arguements
 
-#### getopt
+## getopt
 
 *header: <unistd.h> (POSIX standard) 不一定能在windows上呼叫
 
@@ -60,7 +47,7 @@ tags: program
 * 小建議: switch block 中用變數去紀錄那些功能現在是開啟的 ex: `optionA = 1;`
 * 使用 `printusage` 去偵錯
 
-#### getopt_long
+## getopt_long
 
 * header: <getopt.h> 
 
@@ -68,7 +55,7 @@ tags: program
 
 * struct option
 
-  ```c=
+  ```c
   struct option {
       const char *name;
       int has_arg;
@@ -90,7 +77,7 @@ tags: program
 
   * option array 中的 index
 
-#### Variable Length Arguement
+## Variable Length Arguement
 
 * int printf(const char *format , ...);
 * void printargs(int32_t args[], ...);
@@ -102,13 +89,13 @@ tags: program
     * `va_end(va_list ap)` : 脫鉤
     * `va_cpy(va_list dest, va_list src)`
 
-#### Macro
+# Macro
 
 * 在macro 定義一個函式
 * `\` 表示換行
 * 與一般宣告函式的區別:不占記憶體空間
 
-```c=
+```c
 #define clearFgets(str,len,stream){\
 fgets(str,len,stream);\
 if(str[strlen(str)-1]=='\n')\
@@ -119,13 +106,13 @@ str[strlen(str)-1]=0;\
 * Macro 要加`()`
 * Macro 不加`;`
 
-```c=
+```c
 #define add(a+b) a+b
 int A=add(1+3)*10;
 // A=1+3*10=31
 ```
 
-```c=
+```c
 #define add(a+b) (a+b)
 int A=add(1+3)*10;
 //A=(1+3)*10
@@ -134,21 +121,21 @@ int A=add(1+3)*10;
 * 儘量不要加在Macro中宣告參數，避免重複宣告，不好除錯
 * Macro 無法寫遞迴
 
-#### Some tricks
+# Some tricks
 
 待了解: static link,htop,`top,htop -d 0`,`watch -n 0`,`cat /proc/stat | head -n 1`,MITM
 待學習: GDB,awk,grep,cMake,makefile
 ***學資料結構時用C***
 
-### #define
+## #define
 
-#### ifdef
+### ifdef
 
-##### 一個條件：
+#### 一個條件：
 
 1. 
 
-```=
+```c
 #ifdef 識別字
     /*若識別字被定義,編譯器會編譯此部分程式*/
 #else
@@ -158,7 +145,7 @@ int A=add(1+3)*10;
 
 2. 
 
-```=
+```c
 #if defined(CONDITION_1)
     /*若識別字被定義,編譯器會編譯此部分程式*/
 #elif
@@ -168,7 +155,7 @@ int A=add(1+3)*10;
 
 3. 
 
-```=
+```c
 #define CONDITION_1
 #ifdef CONDITION_1
    /*編譯此部分程式*/
@@ -177,19 +164,19 @@ int A=add(1+3)*10;
 #endif
 ```
 
-##### 兩個以上的條件
+#### 兩個以上的條件
 
 1. 
 
-```=
+```c
 #if defined(CONDITION_1) && defined(CONDITION_2)
    /*若條件達成,編譯器會編譯此部分程式*/
 #endif
 ```
 
-#### ifndef 
+### ifndef 
 
-```=
+```c
 #ifndef 識別字
    /*若識別字沒有被定義,編譯器會編譯此部分程式*/
 #else
@@ -197,18 +184,18 @@ int A=add(1+3)*10;
 #endif
 ```
 
-#### undef
+### undef
 
-```=
+```c
 #undef 識別字
    /*取消定義*/
 ```
 
-#### #if #elif
+### #if #elif
 
 1. 
 
-```=
+```c
 #if 條件式1
    /*若條件式1成立(true),編譯器會編譯此部分程式*/
 #elif 條件式2
@@ -220,7 +207,7 @@ int A=add(1+3)*10;
 
 2. 
 
-```=
+```c
 /*Eaxmple*/
 #define CONDITION 1
 
