@@ -1,0 +1,478 @@
+<!doctype html><html lang=zh-tw>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
+<title>Program2 - 饅頭的部落格</title><meta name=Description content><meta property="og:title" content="Program2">
+<meta property="og:description" content="struct 解決 alignment 的問題 1 __attribute__((packed)) 1 2 #pragma pack(push, 1) #pragma pack(pop) 1 2 3 #pragma pack(push) #pragma pack(1) #pragma pack(pop) File fread header: <stdio.h> size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream); 務必用型別為size_t 的變數去接回傳值 size 為 1 時，將回傳讀入多少">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/program2/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-07-25T15:00:36+08:00">
+<meta property="article:modified_time" content="2021-07-25T15:00:36+08:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Program2">
+<meta name=twitter:description content="struct 解決 alignment 的問題 1 __attribute__((packed)) 1 2 #pragma pack(push, 1) #pragma pack(pop) 1 2 3 #pragma pack(push) #pragma pack(1) #pragma pack(pop) File fread header: <stdio.h> size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream); 務必用型別為size_t 的變數去接回傳值 size 為 1 時，將回傳讀入多少">
+<meta name=application-name content="饅頭的部落格">
+<meta name=apple-mobile-web-app-title content="饅頭的部落格"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=/program2/><link rel=next href=/program1/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Program2","inLanguage":"zh-TW","mainEntityOfPage":{"@type":"WebPage","@id":"\/program2\/"},"genre":"posts","keywords":"C","wordcount":976,"url":"\/program2\/","datePublished":"2021-07-25T15:00:36+08:00","dateModified":"2021-07-25T15:00:36+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"饅頭"},"author":{"@type":"Person","name":"饅頭"},"description":""}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'dark'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'dark'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=饅頭的部落格><span class=header-title-pre><i class="fas fa-cat"></i></span><span id=id-1 class=typeit></span></a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/> 文章 <i class="fas fa-file-alt"></i></a><a class=menu-item href=/tags/> 標籤 <i class="fas fa-tags"></i></a><a class=menu-item href=/categories/> 分類 <i class="far fa-list-alt"></i></a><a class=menu-item href=/about/><i class="far fa-paw-alt"></i> 關於我 </a><a class=menu-item href=/https:/github.com/anci123 title=GitHub><i class="fab fa-github fa-fw"></i> </a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item theme-switch" title>
+<i class="fas fa-adjust fa-fw"></i>
+</a>
+</div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=饅頭的部落格><span class=header-title-pre><i class="fas fa-cat"></i></span><span id=id-2 class=typeit></span></a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><a class=menu-item href=/posts/ title>文章<i class="fas fa-file-alt"></i></a><a class=menu-item href=/tags/ title>標籤<i class="fas fa-tags"></i></a><a class=menu-item href=/categories/ title>分類<i class="far fa-list-alt"></i></a><a class=menu-item href=/about/ title><i class="far fa-paw-alt"></i>關於我</a><a class=menu-item href=/https:/github.com/anci123 title=GitHub><i class="fab fa-github fa-fw"></i></a><a href=javascript:void(0); class="menu-item theme-switch" title>
+<i class="fas fa-adjust fa-fw"></i>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title></h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">Program2</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>饅頭</a></span>&nbsp;<span class=post-category></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-07-25>2021-07-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;&nbsp;</div>
+</div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span></span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#解決-alignment-的問題>解決 alignment 的問題</a></li>
+</ul>
+<ul>
+<li><a href=#fread>fread</a></li>
+</ul>
+<ul>
+<li><a href=#getopt>getopt</a></li>
+<li><a href=#getopt_long>getopt_long</a></li>
+<li><a href=#variable-length-arguement>Variable Length Arguement</a></li>
+</ul>
+<ul>
+<li><a href=#define>#define</a>
+<ul>
+<li><a href=#ifdef>ifdef</a>
+<ul>
+<li><a href=#一個條件>一個條件：</a></li>
+<li><a href=#兩個以上的條件>兩個以上的條件</a></li>
+</ul>
+</li>
+<li><a href=#ifndef>ifndef</a></li>
+<li><a href=#undef>undef</a></li>
+<li><a href=#if-elif>#if #elif</a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
+</div><div class=content id=content><h1 id=struct>struct</h1>
+<h2 id=解決-alignment-的問題>解決 alignment 的問題</h2>
+<ol>
+<li>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=n>__attribute__</span><span class=p>((</span><span class=n>packed</span><span class=p>))</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=cp>#pragma pack(push, 1)
+</span><span class=cp>#pragma pack(pop)
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=cp>#pragma pack(push)
+</span><span class=cp>#pragma pack(1)
+</span><span class=cp>#pragma pack(pop)
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h1 id=file>File</h1>
+<h2 id=fread>fread</h2>
+<ol>
+<li>header: &lt;stdio.h></li>
+<li><code>size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);</code></li>
+<li>務必用型別為size_t 的變數去接回傳值</li>
+<li>size 為 1 時，將回傳讀入多少 bytes</li>
+</ol>
+<h1 id=program-arguements>Program Arguements</h1>
+<h2 id=getopt>getopt</h2>
+<p>*header: &lt;unistd.h> (POSIX standard) 不一定能在windows上呼叫</p>
+<ul>
+<li><code>int getopt(int argc, char * const argv[], const char *optstring);</code></li>
+<li>argc: argument count(前面有加'<code>-</code>'，才會被當作 arguement)</li>
+<li>argv: argument array</li>
+<li>return value 是 command,若不再optstring 中則回傳 &lsquo;<code>?</code>'，以 -1 標示結尾</li>
+<li>opstring: 放 command 的選項，若command後面要加參數，要在該字元後加 &lsquo;<code>:</code>&rsquo;</li>
+<li>後接參數放在 optarg ，對於 optarg 要在 while loop 中處(或先 copy 出來)</li>
+<li>小建議: switch block 中用變數去紀錄那些功能現在是開啟的 ex: <code>optionA = 1;</code></li>
+<li>使用 <code>printusage</code> 去偵錯</li>
+</ul>
+<h2 id=getopt_long>getopt_long</h2>
+<ul>
+<li>
+<p>header: &lt;getopt.h></p>
+</li>
+<li>
+<p><code>int getopt_long(int argc, char * const argv[], const char *optstring, const struct option *longopts, int *longindex);</code></p>
+</li>
+<li>
+<p>struct option</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=k>struct</span> <span class=n>option</span> <span class=p>{</span>
+    <span class=k>const</span> <span class=kt>char</span> <span class=o>*</span><span class=n>name</span><span class=p>;</span>
+    <span class=kt>int</span> <span class=n>has_arg</span><span class=p>;</span>
+    <span class=kt>int</span> <span class=o>*</span><span class=n>flag</span><span class=p>;</span>
+    <span class=kt>int</span> <span class=n>val</span><span class=p>;</span>
+<span class=p>};</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>使用{0,0,0,0}標示結尾 -> 不用帶入 array 的size</li>
+<li>name: the name of the long option.</li>
+<li>has_arg:
+<ul>
+<li>0: no arguments.</li>
+<li>1: required arguments.</li>
+<li>2: optional arguments.</li>
+<li>flag: 當flag 不為 NULL ，將val 傳到 flag 的位址，且回傳值變為 0</li>
+<li>val: 設定對應的 name 的 return value</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>index</p>
+<ul>
+<li>option array 中的 index</li>
+</ul>
+</li>
+</ul>
+<h2 id=variable-length-arguement>Variable Length Arguement</h2>
+<ul>
+<li>int printf(const char *format , &mldr;);</li>
+<li>void printargs(int32_t args[], &mldr;);</li>
+<li>double average(int32_t num, &mldr;);
+<ul>
+<li><code>...</code> 代表 arguement 的數量可改變
+<ul>
+<li><code>va_list</code> 可將&mldr;中的變數取出(是一個 Macro )</li>
+<li><code>va_start(va_list ap, last)</code> : 設定起始位置</li>
+<li><code>va_arg(va_list, last)</code> :設定移動的單位</li>
+<li><code>va_end(va_list ap)</code> : 脫鉤</li>
+<li><code>va_cpy(va_list dest, va_list src)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id=macro>Macro</h1>
+<ul>
+<li>在macro 定義一個函式</li>
+<li><code>\</code> 表示換行</li>
+<li>與一般宣告函式的區別:不占記憶體空間</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=cp>#define clearFgets(str,len,stream){\
+</span><span class=cp>fgets(str,len,stream);\
+</span><span class=cp>if(str[strlen(str)-1]==&#39;\n&#39;)\
+</span><span class=cp>str[strlen(str)-1]=0;\
+</span><span class=cp>}
+</span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Macro 要加<code>()</code></li>
+<li>Macro 不加<code>;</code></li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=cp>#define add(a+b) a+b
+</span><span class=cp></span><span class=kt>int</span> <span class=n>A</span><span class=o>=</span><span class=n>add</span><span class=p>(</span><span class=mi>1</span><span class=o>+</span><span class=mi>3</span><span class=p>)</span><span class=o>*</span><span class=mi>10</span><span class=p>;</span>
+<span class=c1>// A=1+3*10=31
+</span></code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=cp>#define add(a+b) (a+b)
+</span><span class=cp></span><span class=kt>int</span> <span class=n>A</span><span class=o>=</span><span class=n>add</span><span class=p>(</span><span class=mi>1</span><span class=o>+</span><span class=mi>3</span><span class=p>)</span><span class=o>*</span><span class=mi>10</span><span class=p>;</span>
+<span class=c1>//A=(1+3)*10
+</span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>儘量不要加在Macro中宣告參數，避免重複宣告，不好除錯</li>
+<li>Macro 無法寫遞迴</li>
+</ul>
+<h1 id=some-tricks>Some tricks</h1>
+<p>待了解: static link,htop,<code>top,htop -d 0</code>,<code>watch -n 0</code>,<code>cat /proc/stat | head -n 1</code>,MITM
+待學習: GDB,awk,grep,cMake,makefile
+<em><strong>學資料結構時用C</strong></em></p>
+<h2 id=define>#define</h2>
+<h3 id=ifdef>ifdef</h3>
+<h4 id=一個條件>一個條件：</h4>
+<ol>
+<li></li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=cp>#ifdef 識別字
+</span><span class=cp></span>    <span class=cm>/*若識別字被定義,編譯器會編譯此部分程式*/</span>
+<span class=cp>#else
+</span><span class=cp></span>    <span class=cm>/*否則編譯此部分程式*/</span>
+<span class=cp>#endif
+</span></code></pre></td></tr></table>
+</div>
+</div><ol start=2>
+<li></li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=cp>#if defined(CONDITION_1)
+</span><span class=cp></span>    <span class=cm>/*若識別字被定義,編譯器會編譯此部分程式*/</span>
+<span class=cp>#elif
+</span><span class=cp></span>    <span class=cm>/*否則編譯此部分程式*/</span>
+<span class=cp>#endif
+</span></code></pre></td></tr></table>
+</div>
+</div><ol start=3>
+<li></li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=cp>#define CONDITION_1
+</span><span class=cp>#ifdef CONDITION_1
+</span><span class=cp></span>   <span class=cm>/*編譯此部分程式*/</span>
+<span class=cp>#else
+</span><span class=cp></span>   <span class=cm>/*不編譯此部分程式*/</span>
+<span class=cp>#endif
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id=兩個以上的條件>兩個以上的條件</h4>
+<ol>
+<li></li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=cp>#if defined(CONDITION_1) &amp;&amp; defined(CONDITION_2)
+</span><span class=cp></span>   <span class=cm>/*若條件達成,編譯器會編譯此部分程式*/</span>
+<span class=cp>#endif
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id=ifndef>ifndef</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=cp>#ifndef 識別字
+</span><span class=cp></span>   <span class=cm>/*若識別字沒有被定義,編譯器會編譯此部分程式*/</span>
+<span class=cp>#else
+</span><span class=cp></span>   <span class=cm>/*否則編譯此部分程式*/</span>
+<span class=cp>#endif
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id=undef>undef</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=cp>#undef 識別字
+</span><span class=cp></span>   <span class=cm>/*取消定義*/</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=if-elif>#if #elif</h3>
+<ol>
+<li></li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=cp>#if 條件式1
+</span><span class=cp></span>   <span class=cm>/*若條件式1成立(true),編譯器會編譯此部分程式*/</span>
+<span class=cp>#elif 條件式2
+</span><span class=cp></span>   <span class=cm>/*若條件式2成立(true),編譯器會編譯此部分程式*/</span>
+<span class=cp>#else
+</span><span class=cp></span>   <span class=cm>/*若上述條件皆不成式,則會編譯此部分程式*/</span>
+<span class=cp>#endif
+</span></code></pre></td></tr></table>
+</div>
+</div><ol start=2>
+<li></li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-c data-lang=c><span class=cm>/*Eaxmple*/</span>
+<span class=cp>#define CONDITION 1
+</span><span class=cp></span>
+<span class=cp>#if CONDITION == 1
+</span><span class=cp></span>　 <span class=n>printf</span><span class=p>(</span><span class=s>&#34;Condition:1&#34;</span><span class=p>);</span> <span class=c1>//會執行此行程式
+</span><span class=c1></span><span class=cp>#elif CONDITION == 2
+</span><span class=cp></span>   <span class=n>printf</span><span class=p>(</span><span class=s>&#34;Condition:2&#34;</span><span class=p>);</span>
+<span class=cp>#else
+</span><span class=cp></span>   <span class=n>printf</span><span class=p>(</span><span class=s>&#34;Condition:other&#34;</span><span class=p>);</span>
+<span class=cp>#endif
+</span></code></pre></td></tr></table>
+</div>
+</div></div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span></span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md><span>
+<a class=link-to-markdown href=/program2/index.md target=_blank></a>
+</span></div>
+<div class=post-info-share>
+<span></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/c/>C</a></section>
+<section>
+<span><a href=javascript:void(0); onclick=window.history.back()></a></span>&nbsp;|&nbsp;<span><a href=/></a></span>
+</section>
+</div>
+<div class=post-nav>
+<a href=/program1/ class=next rel=next title=Program1>Program1<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>饅頭</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title>
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title>
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css><script type=text/javascript src=https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"",maxShownLines:10},comment:{},data:{"id-1":"饅頭的部落格","id-2":"饅頭的部落格"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},typeit:{cursorChar:"|",cursorSpeed:1e3,data:{"id-1":["id-1"],"id-2":["id-2"]},duration:-1,speed:100}}</script><script type=text/javascript src=/js/theme.min.js></script></body>
+</html>

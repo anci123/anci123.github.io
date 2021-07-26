@@ -1,0 +1,331 @@
+<!doctype html><html lang=zh-tw>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
+<title>LearningC++01 - 饅頭的部落格</title><meta name=Description content><meta property="og:title" content="LearningC++01">
+<meta property="og:description" content="C++學習筆記 標頭檔 <bits/stdc++.h> 是萬能標頭檔，有了他就不用寫其他的標頭檔 using name std; 有了它就可以不用一直帶上函式庫的全名(std::) 1 2 #include<bits/stdc++.h>using namespace std; 但上面的作法">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/learningc-01/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-07-25T15:33:31+08:00">
+<meta property="article:modified_time" content="2021-07-25T15:33:31+08:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="LearningC++01">
+<meta name=twitter:description content="C++學習筆記 標頭檔 <bits/stdc++.h> 是萬能標頭檔，有了他就不用寫其他的標頭檔 using name std; 有了它就可以不用一直帶上函式庫的全名(std::) 1 2 #include<bits/stdc++.h>using namespace std; 但上面的作法">
+<meta name=application-name content="饅頭的部落格">
+<meta name=apple-mobile-web-app-title content="饅頭的部落格"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=/learningc-01/><link rel=prev href=/program1/><link rel=next href=/learninggit01/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"LearningC++01","inLanguage":"zh-TW","mainEntityOfPage":{"@type":"WebPage","@id":"\/learningc-01\/"},"genre":"posts","keywords":"C\u002b\u002b","wordcount":389,"url":"\/learningc-01\/","datePublished":"2021-07-25T15:33:31+08:00","dateModified":"2021-07-25T15:33:31+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"饅頭"},"author":{"@type":"Person","name":"饅頭"},"description":""}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'dark'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'dark'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=饅頭的部落格><span class=header-title-pre><i class="fas fa-cat"></i></span><span id=id-1 class=typeit></span></a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/> 文章 <i class="fas fa-file-alt"></i></a><a class=menu-item href=/tags/> 標籤 <i class="fas fa-tags"></i></a><a class=menu-item href=/categories/> 分類 <i class="far fa-list-alt"></i></a><a class=menu-item href=/about/><i class="far fa-paw-alt"></i> 關於我 </a><a class=menu-item href=/https:/github.com/anci123 title=GitHub><i class="fab fa-github fa-fw"></i> </a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item theme-switch" title>
+<i class="fas fa-adjust fa-fw"></i>
+</a>
+</div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=饅頭的部落格><span class=header-title-pre><i class="fas fa-cat"></i></span><span id=id-2 class=typeit></span></a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><a class=menu-item href=/posts/ title>文章<i class="fas fa-file-alt"></i></a><a class=menu-item href=/tags/ title>標籤<i class="fas fa-tags"></i></a><a class=menu-item href=/categories/ title>分類<i class="far fa-list-alt"></i></a><a class=menu-item href=/about/ title><i class="far fa-paw-alt"></i>關於我</a><a class=menu-item href=/https:/github.com/anci123 title=GitHub><i class="fab fa-github fa-fw"></i></a><a href=javascript:void(0); class="menu-item theme-switch" title>
+<i class="fas fa-adjust fa-fw"></i>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title></h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">LearningC++01</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>饅頭</a></span>&nbsp;<span class=post-category></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-07-25>2021-07-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;&nbsp;</div>
+</div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span></span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#標頭檔>標頭檔</a></li>
+<li><a href=#輸入>輸入</a>
+<ul>
+<li><a href=#stringstream>stringstream</a></li>
+<li><a href=#sscanf>sscanf</a></li>
+</ul>
+</li>
+<li><a href=#輸出>輸出</a>
+<ul>
+<li><a href=#格式對齊>格式對齊</a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
+</div><div class=content id=content><h1 id=c學習筆記>C++學習筆記</h1>
+<h2 id=標頭檔>標頭檔</h2>
+<ul>
+<li><strong>&lt;bits/stdc++.h></strong> 是萬能標頭檔，有了他就不用寫其他的標頭檔</li>
+<li><strong>using name std;</strong> 有了它就可以不用一直帶上函式庫的全名(std::)</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-c++ data-lang=c++><span class=cp>#include</span><span class=cpf>&lt;bits/stdc++.h&gt;</span><span class=cp>
+</span><span class=cp></span><span class=k>using</span> <span class=k>namespace</span> <span class=n>std</span><span class=p>;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>但上面的作法會讓程式跑的速度變慢，可以使用以下方法</strong></p>
+<ul>
+<li>sync_with_stdio 式可以兼容 stdio 的意思，這是 C++ 為了可以兼容C所做的一個設定</li>
+<li>cin.tie 這是將 cin 跟 cout 綁定的意思</li>
+<li>endl 是 換行 加上 flush(清空緩衝區)，換成'\n'，速度會快上許多</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C++ data-lang=C++><span class=n>ios</span><span class=o>::</span><span class=n>sync_with_stdio</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span>
+<span class=n>cin</span><span class=p>.</span><span class=n>tie</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span> 
+<span class=n>cout</span><span class=o>&lt;&lt;</span><span class=s>&#34;Hello&#34;</span><span class=o>&lt;&lt;</span><span class=sc>&#39;\n&#39;</span><span class=p>;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=輸入>輸入</h2>
+<h3 id=stringstream>stringstream</h3>
+<ul>
+<li>
+<p>stringstream 應用</p>
+<ul>
+<li>int -> string</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C++ data-lang=C++><span class=n>string</span> <span class=n>convert</span><span class=p>;</span>
+<span class=n>stringstream</span> <span class=n>ss</span><span class=p>;</span>
+<span class=kt>int</span> <span class=n>number</span><span class=o>=</span><span class=mi>123456</span><span class=p>;</span>
+<span class=n>ss</span><span class=o>&lt;&lt;</span><span class=n>number</span><span class=p>;</span>
+<span class=n>ss</span><span class=o>&gt;&gt;</span><span class=n>convert</span><span class=p>;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>string -> int</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C++ data-lang=C++><span class=n>string</span> <span class=n>numstr</span><span class=o>=</span><span class=s>&#34;123&#34;</span><span class=p>;</span>
+<span class=kt>int</span> <span class=n>num</span><span class=p>;</span>
+<span class=n>stringstream</span> <span class=n>ss</span><span class=p>;</span>
+<span class=n>ss</span><span class=o>&lt;&lt;</span><span class=n>numstr</span><span class=p>;</span>
+<span class=n>ss</span><span class=o>&gt;&gt;</span><span class=n>num</span><span class=p>;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>清空</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C++ data-lang=C++><span class=n>ss</span><span class=p>.</span><span class=n>str</span><span class=p>(</span><span class=s>&#34;&#34;</span><span class=p>);</span>
+<span class=n>ss</span><span class=p>.</span><span class=n>claer</span><span class=p>;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>檢查是否轉型成功</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C++ data-lang=C++><span class=n>stringstream</span> <span class=nf>ss</span><span class=p>(</span><span class=s>&#34;12.0505&#34;</span><span class=p>);</span>
+<span class=kt>double</span> <span class=n>d</span><span class=p>;</span>
+<span class=n>ss</span><span class=o>&lt;&lt;</span><span class=n>d</span><span class=p>;</span>
+<span class=k>if</span><span class=p>(</span><span class=o>!</span><span class=n>ss</span><span class=p>)</span> <span class=n>cout</span><span class=o>&lt;&lt;</span><span class=s>&#34;error type&#34;</span><span class=o>&lt;&lt;</span><span class=n>endl</span><span class=p>;</span>
+<span class=k>else</span> <span class=n>cout</span><span class=o>&lt;&lt;</span><span class=n>d</span><span class=o>&lt;&lt;</span><span class=n>endl</span><span class=p>;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>一串字串中有多組int(用空格切字串)</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C++ data-lang=C++><span class=n>string</span> <span class=n>s</span><span class=o>=</span><span class=s>&#34;13 -456 6566 121 48&#34;</span><span class=p>;</span>
+<span class=n>stringstream</span> <span class=nf>ss</span><span class=p>(</span><span class=n>s</span><span class=p>);</span>
+<span class=kt>int</span> <span class=n>a</span><span class=p>;</span>
+<span class=k>while</span><span class=p>(</span><span class=n>ss</span><span class=o>&gt;</span><span class=n>a</span><span class=p>){</span>
+    <span class=n>cout</span><span class=o>&gt;&gt;</span><span class=n>a</span><span class=o>&gt;&gt;</span><span class=n>endl</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id=sscanf>sscanf</h3>
+<ul>
+<li>
+<p>利用 sscanf 取得部分字串(篩選)</p>
+<ul>
+<li><strong>[]</strong> 中放要讀取的字元範圍，如 [a-z],[^=]</li>
+<li><strong>^</strong> 是<strong>反</strong>的意思</li>
+<li><strong>* 是</strong>所有**</li>
+<li><strong>*[^]</strong> 是跳過符合的字串</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-c++ data-lang=c++><span class=kt>char</span> <span class=n>str</span><span class=p>[</span><span class=mi>10</span><span class=p>];</span>
+<span class=kt>char</span> <span class=n>st2</span><span class=p>[</span><span class=mi>10</span><span class=p>];</span>
+<span class=n>cin</span><span class=o>&gt;&gt;</span><span class=n>str</span><span class=p>;</span>
+<span class=n>sscanf</span><span class=p>(</span><span class=n>str</span><span class=p>,</span><span class=s>&#34;%[^-]&#34;</span><span class=p>,</span><span class=n>st2</span><span class=p>);</span>
+<span class=n>cout</span><span class=o>&lt;&lt;</span><span class=n>st2</span><span class=o>&lt;&lt;</span><span class=n>endl</span><span class=p>;</span>
+<span class=c1>//input:123-ABC
+</span><span class=c1>//output:123
+</span></code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C++ data-lang=C++><span class=kt>char</span> <span class=n>str</span><span class=p>[</span><span class=mi>10</span><span class=p>];</span><span class=kt>char</span> <span class=n>st2</span><span class=p>[</span><span class=mi>10</span><span class=p>];</span><span class=n>cin</span><span class=o>&gt;&gt;</span><span class=n>str</span><span class=p>;</span><span class=n>sscanf</span><span class=p>(</span><span class=n>str</span><span class=p>,</span><span class=s>&#34;%*[^-]-%s&#34;</span><span class=p>,</span><span class=n>st2</span><span class=p>);</span><span class=n>cout</span><span class=o>&lt;&lt;</span><span class=n>st2</span><span class=o>&lt;&lt;</span><span class=n>endl</span><span class=p>;</span><span class=c1>//input:123-ABC//output:ABC
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id=輸出>輸出</h2>
+<h3 id=格式對齊>格式對齊</h3>
+<ol>
+<li>setw(n)
+<ul>
+<li>n規定輸出的格數，若n小於輸出的位數則會被忽視</li>
+</ul>
+</li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C++ data-lang=C++><span class=n>cout</span><span class=o>&lt;&lt;</span><span class=n>setw</span><span class=p>(</span><span class=mi>3</span><span class=p>)</span><span class=o>&lt;&lt;</span><span class=mi>1</span><span class=o>&lt;&lt;</span><span class=n>endl</span><span class=p>;</span>
+<span class=c1>//  1
+</span><span class=c1></span><span class=n>cout</span><span class=o>&lt;&lt;</span><span class=n>setw</span><span class=p>(</span><span class=mi>3</span><span class=p>)</span><span class=o>&lt;&lt;</span><span class=mi>12345</span><span class=o>&lt;&lt;</span><span class=n>endl</span><span class=p>;</span>
+<span class=c1>//12345
+</span></code></pre></td></tr></table>
+</div>
+</div><ol start=2>
+<li>setfill(char)</li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C++ data-lang=C++>    <span class=n>string</span> <span class=n>s</span><span class=o>=</span><span class=s>&#34;qwe&#34;</span><span class=p>;</span>
+    <span class=n>cout</span><span class=o>&lt;&lt;</span><span class=n>setw</span><span class=p>(</span><span class=mi>5</span><span class=p>)</span><span class=o>&lt;&lt;</span><span class=n>setfill</span><span class=p>(</span><span class=sc>&#39;*&#39;</span><span class=p>)</span><span class=o>&lt;&lt;</span><span class=n>s</span><span class=p>;</span>
+    <span class=c1>//**qwe
+</span></code></pre></td></tr></table>
+</div>
+</div></div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span></span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md><span>
+<a class=link-to-markdown href=/learningc-01/index.md target=_blank></a>
+</span></div>
+<div class=post-info-share>
+<span></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/c++/>C++</a></section>
+<section>
+<span><a href=javascript:void(0); onclick=window.history.back()></a></span>&nbsp;|&nbsp;<span><a href=/></a></span>
+</section>
+</div>
+<div class=post-nav><a href=/program1/ class=prev rel=prev title=Program1><i class="fas fa-angle-left fa-fw"></i>Program1</a>
+<a href=/learninggit01/ class=next rel=next title=LearningGit01>LearningGit01<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>饅頭</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title>
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title>
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css><script type=text/javascript src=https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"",maxShownLines:10},comment:{},data:{"id-1":"饅頭的部落格","id-2":"饅頭的部落格"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},typeit:{cursorChar:"|",cursorSpeed:1e3,data:{"id-1":["id-1"],"id-2":["id-2"]},duration:-1,speed:100}}</script><script type=text/javascript src=/js/theme.min.js></script></body>
+</html>

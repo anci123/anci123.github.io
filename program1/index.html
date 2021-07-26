@@ -1,0 +1,252 @@
+<!doctype html><html lang=zh-tw>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
+<title>Program1 - 饅頭的部落格</title><meta name=Description content><meta property="og:title" content="Program1">
+<meta property="og:description" content="程式設計(一) 注意事項 main函式先加 return 0 先初始化變數 使用 ++i, &ndash;i 而不是 i++ scanf(&#34;%d&#34;,&a); Arithmetic 計算 \ 跳脫字元 \t -> tab \n ->換行 \&#34; -> &#34; \\ -> \ printf format 類型字元 格式 %d">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/program1/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-07-25T15:00:36+08:00">
+<meta property="article:modified_time" content="2021-07-25T15:00:36+08:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Program1">
+<meta name=twitter:description content="程式設計(一) 注意事項 main函式先加 return 0 先初始化變數 使用 ++i, &ndash;i 而不是 i++ scanf(&#34;%d&#34;,&a); Arithmetic 計算 \ 跳脫字元 \t -> tab \n ->換行 \&#34; -> &#34; \\ -> \ printf format 類型字元 格式 %d">
+<meta name=application-name content="饅頭的部落格">
+<meta name=apple-mobile-web-app-title content="饅頭的部落格"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=/program1/><link rel=prev href=/program2/><link rel=next href=/learningc-01/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Program1","inLanguage":"zh-TW","mainEntityOfPage":{"@type":"WebPage","@id":"\/program1\/"},"genre":"posts","keywords":"C","wordcount":353,"url":"\/program1\/","datePublished":"2021-07-25T15:00:36+08:00","dateModified":"2021-07-25T15:00:36+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"饅頭"},"author":{"@type":"Person","name":"饅頭"},"description":""}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'dark'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'dark'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=饅頭的部落格><span class=header-title-pre><i class="fas fa-cat"></i></span><span id=id-1 class=typeit></span></a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/> 文章 <i class="fas fa-file-alt"></i></a><a class=menu-item href=/tags/> 標籤 <i class="fas fa-tags"></i></a><a class=menu-item href=/categories/> 分類 <i class="far fa-list-alt"></i></a><a class=menu-item href=/about/><i class="far fa-paw-alt"></i> 關於我 </a><a class=menu-item href=/https:/github.com/anci123 title=GitHub><i class="fab fa-github fa-fw"></i> </a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item theme-switch" title>
+<i class="fas fa-adjust fa-fw"></i>
+</a>
+</div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=饅頭的部落格><span class=header-title-pre><i class="fas fa-cat"></i></span><span id=id-2 class=typeit></span></a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><a class=menu-item href=/posts/ title>文章<i class="fas fa-file-alt"></i></a><a class=menu-item href=/tags/ title>標籤<i class="fas fa-tags"></i></a><a class=menu-item href=/categories/ title>分類<i class="far fa-list-alt"></i></a><a class=menu-item href=/about/ title><i class="far fa-paw-alt"></i>關於我</a><a class=menu-item href=/https:/github.com/anci123 title=GitHub><i class="fab fa-github fa-fw"></i></a><a href=javascript:void(0); class="menu-item theme-switch" title>
+<i class="fas fa-adjust fa-fw"></i>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title></h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">Program1</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>饅頭</a></span>&nbsp;<span class=post-category></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-07-25>2021-07-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;&nbsp;</div>
+</div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span></span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#注意事項><strong>注意事項</strong></a></li>
+</ul>
+<ul>
+<li><a href=#string-functions>string functions</a>
+<ul>
+<li><a href=#string-conversion-functions>string conversion functions</a></li>
+<li><a href=#intputoutput-fuctions>intput/output fuctions</a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
+</div><div class=content id=content><h1 id=程式設計一>程式設計(一)</h1>
+<h2 id=注意事項><strong>注意事項</strong></h2>
+<ul>
+<li>main函式先加 <font color=#00FFFF>return 0</font></li>
+<li>先初始化變數</li>
+<li>使用 <font color=#00FFFF>++i, &ndash;i</font> 而不是 i++</li>
+<li>scanf("%d",<font color=#00FFFF>&</font>a);</li>
+</ul>
+<h1 id=arithmetic-計算>Arithmetic 計算</h1>
+<ul>
+<li><strong>\ 跳脫字元</strong>
+<ul>
+<li>\t -> tab</li>
+<li>\n ->換行</li>
+<li>\" -> "</li>
+<li>\\ -> \</li>
+</ul>
+</li>
+<li><strong>printf format</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>類型字元</th>
+<th style=text-align:left>格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%d</td>
+<td style=text-align:left>十進位帶號整數(int32_t)</td>
+</tr>
+<tr>
+<td>%ld</td>
+<td style=text-align:left>(int64_t)</td>
+</tr>
+<tr>
+<td>%hd</td>
+<td style=text-align:left>(int16_t)</td>
+</tr>
+<tr>
+<td>%hhd</td>
+<td style=text-align:left>(int8_t)</td>
+</tr>
+<tr>
+<td>%u</td>
+<td style=text-align:left>十進位無號整數(uint32_t)</td>
+</tr>
+<tr>
+<td>%lu,%hu,%hhu</td>
+<td style=text-align:left>(uint64_t)(uint16_t) (uint8_t)</td>
+</tr>
+<tr>
+<td>%f,%g,%e</td>
+<td style=text-align:left>float(%g:去掉尾端的0)(%e:科學記號)</td>
+</tr>
+<tr>
+<td>%lf,%lg,%le</td>
+<td style=text-align:left>double</td>
+</tr>
+<tr>
+<td>%x %X</td>
+<td style=text-align:left>十六進位整數(X:輸出為大寫)</td>
+</tr>
+<tr>
+<td>%o</td>
+<td style=text-align:left>八進位整數</td>
+</tr>
+<tr>
+<td>%p</td>
+<td style=text-align:left>指標位址</td>
+</tr>
+<tr>
+<td>%c</td>
+<td style=text-align:left>字元</td>
+</tr>
+<tr>
+<td>%s</td>
+<td style=text-align:left>字串</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>a % b -> ( a/ b) * b + a % b = a -> -2 % 7=-2</li>
+<li></li>
+</ul>
+<h1 id=string>string</h1>
+<h2 id=string-functions>string functions</h2>
+<h3 id=string-conversion-functions>string conversion functions</h3>
+<ul>
+<li>標頭檔: <code>#inlcude&lt;stdlib.h></code></li>
+<li>strtod: <code>double strtod(const char *nptr, char **endptr);</code></li>
+<li>strtol: <code>long int strtol(const char *nptr, char **endptr, int base);</code></li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=kt>int</span> <span class=nf>main</span><span class=p>(){</span>
+   <span class=kt>char</span> <span class=n>str</span><span class=p>[</span><span class=mi>30</span><span class=p>]</span> <span class=o>=</span> <span class=s>&#34;20.30300 This is test&#34;</span><span class=p>;</span>
+   <span class=kt>char</span> <span class=o>**</span><span class=n>ptr</span><span class=p>;</span>
+   <span class=kt>double</span> <span class=n>ret</span><span class=p>;</span>
+
+   <span class=n>ret</span> <span class=o>=</span> <span class=n>strtod</span><span class=p>(</span><span class=n>str</span><span class=p>,</span> <span class=n>ptr</span><span class=p>);</span>
+   <span class=n>printf</span><span class=p>(</span><span class=s>&#34;The number(double) is %lf</span>
+<span class=s>&#34;, ret);</span>
+   <span class=n>printf</span><span class=p>(</span><span class=s>&#34;String part is |%s|&#34;</span><span class=p>,</span> <span class=o>*</span><span class=n>ptr</span><span class=p>);</span>
+
+   <span class=k>return</span><span class=p>(</span><span class=mi>0</span><span class=p>);</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=intputoutput-fuctions>intput/output fuctions</h3>
+<ul>
+<li>getchar:<code>int getchar(void);</code></li>
+<li>fgets:<code>char *fgets(char *s, int size, FILE *stream);</code>
+&lsquo;\n&rsquo;也會讀入，須對&rsquo;\n&rsquo;處理過才是一般的字串</li>
+<li>putcahr:<code>int putchar(int c);</code></li>
+<li>puts: <code>int puts(const char *s);</code></li>
+<li>snprintf: <code>int snprintf(char *str, size_t size, const char *format , ...);</code></li>
+<li>sscanf: <code>int sscanf(const char *str, const char *format , ...);</code></li>
+</ul>
+</div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span></span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md><span>
+<a class=link-to-markdown href=/program1/index.md target=_blank></a>
+</span></div>
+<div class=post-info-share>
+<span></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/c/>C</a></section>
+<section>
+<span><a href=javascript:void(0); onclick=window.history.back()></a></span>&nbsp;|&nbsp;<span><a href=/></a></span>
+</section>
+</div>
+<div class=post-nav><a href=/program2/ class=prev rel=prev title=Program2><i class="fas fa-angle-left fa-fw"></i>Program2</a>
+<a href=/learningc-01/ class=next rel=next title=LearningC++01>LearningC++01<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>饅頭</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title>
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title>
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.css><script type=text/javascript src=https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/copy-tex.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"",maxShownLines:10},comment:{},data:{"id-1":"饅頭的部落格","id-2":"饅頭的部落格"},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},typeit:{cursorChar:"|",cursorSpeed:1e3,data:{"id-1":["id-1"],"id-2":["id-2"]},duration:-1,speed:100}}</script><script type=text/javascript src=/js/theme.min.js></script></body>
+</html>
