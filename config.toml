@@ -1,6 +1,6 @@
 baseURL = "http://blog.manto-meow.tk/"
 # [en, zh-cn, fr, zh-tw ,...] 設置默認語言
-defaultContentLanguage = "zh-tw"
+defaultContentLanguage = "en"
 title = "饅頭的部落格"
 
 # 設置默認主題
@@ -11,12 +11,11 @@ enableGitInfo = false
 enableEmoji = true
 
 [languages]
-  [languages.zh-tw]
-    weight = 2
-    # 网站语言, 仅在这里 TW 大写
-    languageCode = "zh-TW"
+  [languages.en]
+    weight = 1
+    languageCode = "en"
     # 语言名称
-    languageName = "中文"
+    languageName = "English"
     # 是否包括中日韩文字
     hasCJKLanguage = true
     # 默认每页列表显示的文章数目
@@ -26,8 +25,8 @@ enableEmoji = true
     # 版权描述，仅仅用于 SEO
     copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
     # 菜单配置
-    [languages.zh-tw.menu]
-      [[languages.zh-tw.menu.main]]
+    [languages.en.menu]
+      [[languages.en.menu.main]]
         identifier = "posts"
         # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
         pre = ""
@@ -37,7 +36,7 @@ enableEmoji = true
         url = "/posts/"
         title = ""
         weight = 1
-      [[languages.zh-tw.menu.main]]
+      [[languages.en.menu.main]]
         identifier = "tags"
         pre = ""
         post = "<i class='fas fa-tags'></i>"
@@ -45,7 +44,7 @@ enableEmoji = true
         url = "/tags/"
         title = ""
         weight = 2
-      [[languages.zh-tw.menu.main]]
+      [[languages.en.menu.main]]
         identifier = "categories"
         pre = ""
         post = "<i class='far fa-list-alt'></i>"
@@ -53,7 +52,7 @@ enableEmoji = true
         url = "/categories/"
         title = ""
         weight = 3
-      [[languages.zh-tw.menu.main]]
+      [[languages.en.menu.main]]
         identifier = "about"
         pre = "<i class='far fa-paw-alt'></i>"
         post = ""
@@ -61,7 +60,7 @@ enableEmoji = true
         url = "/about/"
         title = ""
         weight = 5
-#      [[languages.zh-tw.menu.main]]
+#      [[languages.en.menu.main]]
 #        identifier = "github"
 #        pre = "<i class='fab fa-github fa-fw'></i>"
 #        post = ""
@@ -71,11 +70,11 @@ enableEmoji = true
 #        weight = 6
 
       # 主页信息设置
-      [languages.zh-tw.params.home]
+      [languages.en.params.home]
         # RSS 文章数目
         rss = 3
         # 主页个人信息
-        [languages.zh-tw.params.home.profile]
+        [languages.en.params.home.profile]
           enable = true
           # Gravatar 邮箱，用于优先在主页显示的头像
           gravatarEmail = ""
@@ -92,7 +91,7 @@ enableEmoji = true
           # 免责声明 (支持 HTML 格式)
           disclaimer = ""
         # 主页文章列表
-        [languages.zh-tw.params.home.posts]
+        [languages.en.params.home.posts]
           enable = true
           # 主页每页显示文章数量
           paginate = 3
