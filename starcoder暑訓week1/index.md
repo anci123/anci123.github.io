@@ -38,7 +38,7 @@
 
 - Code
 
-  ```C
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   int main(){
@@ -67,7 +67,7 @@
 - 作法
   - sort 函式
 - Code
-```C
+```C++
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
@@ -95,7 +95,7 @@ int main(){
 
 - Code
 
-  ```C
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   int main(){
@@ -136,7 +136,7 @@ int main(){
 
 - Code
 
-  ```C
+  ```C++
   #include <bits/stdc++.h>
   using namespace std;
   int main() {
@@ -168,7 +168,7 @@ int main(){
 
 - Code
 
-  ```C
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   int main()
@@ -218,7 +218,7 @@ int main(){
 
 - Code
 
-  ```C
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   
@@ -276,7 +276,7 @@ int main(){
 
 - Code
 
-  ```C
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   int main(){
@@ -311,7 +311,7 @@ int main(){
 
 - Code
 
-  ```C
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   typedef struct{
@@ -358,7 +358,7 @@ int main(){
 
 - Code
 
-  ```C
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   int main(){
@@ -392,7 +392,7 @@ int main(){
 
 - Code
 
-  ```C
+  ```C++
   #include <bits/stdc++.h>
   using namespace std;
   #define F first
@@ -456,7 +456,7 @@ int main(){
 
 - Code
 
-  ```C
+  ```C++
   #include <bits/stdc++.h>
   using namespace std;
   long long ans = 0;
