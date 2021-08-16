@@ -77,7 +77,7 @@ draft: false
 
 - Code
 
-  ```C
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   int main() {
@@ -115,7 +115,7 @@ draft: false
   
 - Code
 
-  ```C
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   typedef struct {
@@ -173,7 +173,7 @@ draft: false
 
 - Code
 
-  ```C
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   int main() {
@@ -219,7 +219,7 @@ draft: false
 
 - Code
 
-  ```C
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   int main() {
@@ -268,7 +268,7 @@ draft: false
 
 - Code
 
-  ```C\
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   typedef struct _item {
@@ -305,7 +305,7 @@ draft: false
 
 - Code
 
-  ```C
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   int main() {
@@ -355,7 +355,7 @@ draft: false
 
 - Code
 
-  ```C
+  ```C++
   #include <iostream>
   #include <cstdio>
   #include <cstdlib>
@@ -411,7 +411,7 @@ draft: false
 
 - Code
 
-  ```C
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   long long n, m, k, pa[100000], sum[100000], cnt[100000], id[100000];
@@ -468,7 +468,7 @@ draft: false
 
 - Code
 
-  ```C
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   typedef struct {
@@ -523,7 +523,7 @@ draft: false
 
 - Code
 
-  ```C\
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   typedef struct {
@@ -586,7 +586,7 @@ draft: false
 
 - Code 
 
-  ```C
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   map<string, int> setID;
