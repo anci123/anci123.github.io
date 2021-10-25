@@ -72,7 +72,7 @@ enableEmoji = true
       # 主页信息设置
       [languages.en.params.home]
         # RSS 文章数目
-        rss = 3
+        rss = 10
         # 主页个人信息
         [languages.en.params.home.profile]
           enable = true
@@ -94,7 +94,7 @@ enableEmoji = true
         [languages.en.params.home.posts]
           enable = true
           # 主页每页显示文章数量
-          paginate = 3
+          paginate = 10
       # 主页的社交信息设置
 
 [params]

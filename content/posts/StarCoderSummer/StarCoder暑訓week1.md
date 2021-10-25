@@ -5,7 +5,11 @@ categories: ["競程練題"]
 date: 2021-07-26T23:10:40+08:00
 draft: false
 ---
+<!--more-->
 # 搜尋/排序/貪心
+## 模板連結
+[Search]({{< ref "posts/algorithm/search.md" >}})
+[Sort]({{< ref "posts/algorithm/sort.md" >}})
 ## 教材
 ### 線上教材
 |教材|說明|
