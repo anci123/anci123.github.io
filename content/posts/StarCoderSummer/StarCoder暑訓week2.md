@@ -7,8 +7,6 @@ draft: false
 ---
 <!--more-->
 # 基礎資料結構與STL 
-## 模板連結
-//[STL]({{< ref "posts/algorithm/STL.md" >}})
 
 ## 內容大綱
 
