@@ -1,6 +1,10 @@
 # StarCoder暑訓week1
 
+<!--more-->
 # 搜尋/排序/貪心
+## 模板連結
+[Search]({{< ref "posts/algorithm/search.md" >}})
+[Sort]({{< ref "posts/algorithm/sort.md" >}})
 ## 教材
 ### 線上教材
 |教材|說明|

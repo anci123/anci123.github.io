@@ -5,18 +5,18 @@
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
 <title>StarCoder暑訓week1 - 饅頭的部落格</title><meta name=Description content><meta property="og:title" content="StarCoder暑訓week1">
-<meta property="og:description" content="搜尋/排序/貪心 教材 線上教材 教材 說明 師大碼賽客：排序/貪心/二分搜 子緯學長的教學講義（詳盡的新手入門） 北一女培訓：排序 六種排序法的程式與簡介">
+<meta property="og:description" content>
 <meta property="og:type" content="article">
 <meta property="og:url" content="http://blog.manto-meow.tk/starcoder%E6%9A%91%E8%A8%93week1/"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-07-26T23:10:40+08:00">
 <meta property="article:modified_time" content="2021-07-26T23:10:40+08:00">
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="StarCoder暑訓week1">
-<meta name=twitter:description content="搜尋/排序/貪心 教材 線上教材 教材 說明 師大碼賽客：排序/貪心/二分搜 子緯學長的教學講義（詳盡的新手入門） 北一女培訓：排序 六種排序法的程式與簡介">
+<meta name=twitter:description content>
 <meta name=application-name content="饅頭的部落格">
 <meta name=apple-mobile-web-app-title content="饅頭的部落格"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://blog.manto-meow.tk/starcoder%E6%9A%91%E8%A8%93week1/><link rel=prev href=http://blog.manto-meow.tk/learninggit01/><link rel=next href=http://blog.manto-meow.tk/assembly01/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"StarCoder暑訓week1","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/blog.manto-meow.tk\/starcoder%E6%9A%91%E8%A8%93week1\/"},"genre":"posts","keywords":"Starcoder暑訓, C\u002b\u002b","wordcount":2060,"url":"http:\/\/blog.manto-meow.tk\/starcoder%E6%9A%91%E8%A8%93week1\/","datePublished":"2021-07-26T23:10:40+08:00","dateModified":"2021-07-26T23:10:40+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"饅頭"},"author":{"@type":"Person","name":"饅頭"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://blog.manto-meow.tk/starcoder%E6%9A%91%E8%A8%93week1/><link rel=prev href=http://blog.manto-meow.tk/learninggit01/><link rel=next href=http://blog.manto-meow.tk/assembly01/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"StarCoder暑訓week1","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/blog.manto-meow.tk\/starcoder%E6%9A%91%E8%A8%93week1\/"},"genre":"posts","keywords":"Starcoder暑訓, C\u002b\u002b","wordcount":2066,"url":"http:\/\/blog.manto-meow.tk\/starcoder%E6%9A%91%E8%A8%93week1\/","datePublished":"2021-07-26T23:10:40+08:00","dateModified":"2021-07-26T23:10:40+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"饅頭"},"author":{"@type":"Person","name":"饅頭"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'dark'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'dark'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -57,7 +57,7 @@
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">StarCoder暑訓week1</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>饅頭</a></span>&nbsp;<span class=post-category>included in <a href=/categories/%E7%AB%B6%E7%A8%8B%E7%B7%B4%E9%A1%8C/><i class="far fa-folder fa-fw"></i>競程練題</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-07-26>2021-07-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2060 words&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-07-26>2021-07-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2066 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept>
 <div class="details-summary toc-title">
@@ -66,6 +66,7 @@
 </div>
 <div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
 <ul>
+<li><a href=#模板連結>模板連結</a></li>
 <li><a href=#教材>教材</a>
 <ul>
 <li><a href=#線上教材>線上教材</a></li>
@@ -91,6 +92,9 @@
 </ul>
 </nav></div>
 </div><div class=content id=content><h1 id=搜尋排序貪心>搜尋/排序/貪心</h1>
+<h2 id=模板連結>模板連結</h2>
+<p><a href=http://blog.manto-meow.tk/search/ rel>Search</a>
+<a href=http://blog.manto-meow.tk/sort/ rel>Sort</a></p>
 <h2 id=教材>教材</h2>
 <h3 id=線上教材>線上教材</h3>
 <table>
@@ -1036,8 +1040,7 @@
 </code></pre></td></tr></table>
 </div>
 </div></li>
-</ul>
-</div><div class=post-footer id=post-footer>
+</ul></div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>

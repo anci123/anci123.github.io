@@ -1,7 +1,7 @@
 # StarCoder暑訓week2
 
-
-# 基礎資料結構與STL
+<!--more-->
+# 基礎資料結構與STL 
 
 ## 內容大綱
 
@@ -21,22 +21,22 @@
 
 ### 線上教材
 
-| 教材                                                         | 說明                                              |
-| ------------------------------------------------------------ | ------------------------------------------------- |
-| [師大碼賽客：基礎資料結構/STL](https://drive.google.com/file/d/1XoAMrDslzOPR6THMBpW1Xt5xfc_9hnaA/view?usp=sharing) | 品新學長的教學講義（詳盡的STL語法示範與題目解說） |
-| [板中培訓：STL](https://drive.google.com/file/d/1Gir6DKICVljhpfzW1_Q4Rhs81riPyIiW/view) | STL語法                                           |
-| [建中培訓 (第3節)](https://tioj.ck.tp.edu.tw/uploads/attachment/5/12/1_2.pdf) | STL語法                                           |
-| [北一女培訓：樹/二元樹/Heap/BST](http://web.fg.tp.edu.tw/~tfgcsblog/blog/wp-content/uploads/2010/12/樹狀結構TreeHeap.ppt) | 樹狀結構投影片                                    |
+| 教材                                                                                                                                         | 說明                                              |
+| -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| [師大碼賽客：基礎資料結構/STL](https://drive.google.com/file/d/1XoAMrDslzOPR6THMBpW1Xt5xfc_9hnaA/view?usp=sharing)                           | 品新學長的教學講義（詳盡的STL語法示範與題目解說） |
+| [板中培訓：STL](https://drive.google.com/file/d/1Gir6DKICVljhpfzW1_Q4Rhs81riPyIiW/view)                                                      | STL語法                                           |
+| [建中培訓 (第3節)](https://tioj.ck.tp.edu.tw/uploads/attachment/5/12/1_2.pdf)                                                                | STL語法                                           |
+| [北一女培訓：樹/二元樹/Heap/BST](http://web.fg.tp.edu.tw/~tfgcsblog/blog/wp-content/uploads/2010/12/樹狀結構TreeHeap.ppt)                    | 樹狀結構投影片                                    |
 | [北一女培訓：並查集  (disjoint set)](http://web.fg.tp.edu.tw/~tfgcsblog/blog/wp-content/uploads/2016/07/06_1_進階資料結構_Disjoint_Set.pptx) | 並查集投影片                                      |
-| [成大競程培訓 (單元2/3/4)](https://nckuacm.github.io/2019/)  | 資結/STL/樹/圖                                    |
+| [成大競程培訓 (單元2/3/4)](https://nckuacm.github.io/2019/)                                                                                  | 資結/STL/樹/圖                                    |
 
  
 
 ### 演算法視覺化
 
-| 資料結構                                                     | 說明                                                       |
-| ------------------------------------------------------------ | ---------------------------------------------------------- |
-| [堆積 (heap)](https://www.cs.usfca.edu/~galles/visualization/Heap.html) | 最小堆積的插入與取值動畫（圖形結構與陣列內容）：推薦！     |
+| 資料結構                                                                   | 說明                                                       |
+| -------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| [堆積 (heap)](https://www.cs.usfca.edu/~galles/visualization/Heap.html)    | 最小堆積的插入與取值動畫（圖形結構與陣列內容）：推薦！     |
 | [並查集](https://www.cs.usfca.edu/~galles/visualization/DisjointSets.html) | 並查集的 union/find 操作動畫（圖形結構與陣列內容）：推薦！ |
 
  
@@ -72,7 +72,7 @@
 
 - Code
 
-  ```C
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   int main() {
@@ -110,7 +110,7 @@
   
 - Code
 
-  ```C
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   typedef struct {
@@ -168,7 +168,7 @@
 
 - Code
 
-  ```C
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   int main() {
@@ -214,7 +214,7 @@
 
 - Code
 
-  ```C
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   int main() {
@@ -263,7 +263,7 @@
 
 - Code
 
-  ```C\
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   typedef struct _item {
@@ -300,7 +300,7 @@
 
 - Code
 
-  ```C
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   int main() {
@@ -350,7 +350,7 @@
 
 - Code
 
-  ```C
+  ```C++
   #include <iostream>
   #include <cstdio>
   #include <cstdlib>
@@ -406,7 +406,7 @@
 
 - Code
 
-  ```C
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   long long n, m, k, pa[100000], sum[100000], cnt[100000], id[100000];
@@ -463,7 +463,7 @@
 
 - Code
 
-  ```C
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   typedef struct {
@@ -518,7 +518,7 @@
 
 - Code
 
-  ```C\
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   typedef struct {
@@ -581,7 +581,7 @@
 
 - Code 
 
-  ```C
+  ```C++
   #include<bits/stdc++.h>
   using namespace std;
   map<string, int> setID;

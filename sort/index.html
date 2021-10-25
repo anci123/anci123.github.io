@@ -1,0 +1,451 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
+<title>Sort - 饅頭的部落格</title><meta name=Description content><meta property="og:title" content="Sort">
+<meta property="og:description" content>
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://blog.manto-meow.tk/sort/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-08-16T17:32:43+08:00">
+<meta property="article:modified_time" content="2021-08-16T17:32:43+08:00">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Sort">
+<meta name=twitter:description content>
+<meta name=application-name content="饅頭的部落格">
+<meta name=apple-mobile-web-app-title content="饅頭的部落格"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://blog.manto-meow.tk/sort/><link rel=prev href=http://blog.manto-meow.tk/search/><link rel=next href=http://blog.manto-meow.tk/mst/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Sort","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/blog.manto-meow.tk\/sort\/"},"genre":"posts","keywords":"algorithm, C\u002b\u002b","wordcount":1008,"url":"http:\/\/blog.manto-meow.tk\/sort\/","datePublished":"2021-08-16T17:32:43+08:00","dateModified":"2021-08-16T17:32:43+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"饅頭"},"author":{"@type":"Person","name":"饅頭"},"description":""}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'dark'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'dark'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=饅頭的部落格><span class=header-title-pre><i class="fas fa-cat"></i></span><span id=id-1 class=typeit></span></a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/> 文章 <i class="fas fa-file-alt"></i></a><a class=menu-item href=/tags/> 標籤 <i class="fas fa-tags"></i></a><a class=menu-item href=/categories/> 分類 <i class="far fa-list-alt"></i></a><a class=menu-item href=/about/><i class="far fa-paw-alt"></i> 關於我 </a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i>
+</a>
+</div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=饅頭的部落格><span class=header-title-pre><i class="fas fa-cat"></i></span><span id=id-2 class=typeit></span></a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><a class=menu-item href=/posts/ title>文章<i class="fas fa-file-alt"></i></a><a class=menu-item href=/tags/ title>標籤<i class="fas fa-tags"></i></a><a class=menu-item href=/categories/ title>分類<i class="far fa-list-alt"></i></a><a class=menu-item href=/about/ title><i class="far fa-paw-alt"></i>關於我</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title>Contents</h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">Sort</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>饅頭</a></span>&nbsp;<span class=post-category>included in <a href=/categories/algorithm/><i class="far fa-folder fa-fw"></i>algorithm</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-08-16>2021-08-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1008 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+</div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#暴力搜尋法窮舉>暴力搜尋法(窮舉)</a></li>
+<li><a href=#selection-sort>selection sort</a></li>
+<li><a href=#bubble-sort-泡沫排序>bubble sort 泡沫排序</a></li>
+<li><a href=#gnome-sort-侏儒排序>gnome sort 侏儒排序</a></li>
+<li><a href=#insertion-sort-插入排序>Insertion sort 插入排序</a></li>
+<li><a href=#merge-sort>merge sort</a></li>
+<li><a href=#quick-sort>quick sort</a></li>
+<li><a href=#counting-sort>counting sort</a></li>
+</ul>
+</nav></div>
+</div><div class=content id=content><h1 id=搜尋>搜尋</h1>
+<h2 id=暴力搜尋法窮舉>暴力搜尋法(窮舉)</h2>
+<ol>
+<li>找到最大值及最小值</li>
+<li>設定一個i值從最小值開始遞增到最大值</li>
+<li>檢查陣列中是否有等於i值的數，全部列出</li>
+</ol>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C++ data-lang=C++><span class=kt>void</span> <span class=nf>brute_force</span><span class=p>(</span><span class=kt>int</span> <span class=n>array</span><span class=p>[],</span> <span class=kt>int</span> <span class=n>size</span><span class=p>){</span>
+    <span class=kt>int</span> <span class=n>max_value</span> <span class=o>=</span> <span class=n>array</span><span class=p>[</span><span class=mi>0</span><span class=p>];</span>
+    <span class=kt>int</span> <span class=n>min_value</span> <span class=o>=</span> <span class=n>array</span><span class=p>[</span><span class=mi>0</span><span class=p>];</span>
+    <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span><span class=n>i</span><span class=o>&lt;</span><span class=n>size</span><span class=p>;</span><span class=o>++</span><span class=n>i</span><span class=p>){</span>
+        <span class=n>max_value</span> <span class=o>=</span> <span class=n>max</span><span class=p>(</span><span class=n>max_value</span><span class=p>,</span> <span class=n>array</span><span class=p>[</span><span class=n>i</span><span class=p>]);</span>
+        <span class=n>min_value</span> <span class=o>=</span> <span class=n>min</span><span class=p>(</span><span class=n>min_value</span><span class=p>,</span> <span class=n>array</span><span class=p>[</span><span class=n>i</span><span class=p>]);</span>
+    <span class=p>}</span>
+    <span class=c1>//找到最大及最小值
+</span><span class=c1></span>    <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=n>min_value</span><span class=p>;</span> <span class=n>i</span><span class=o>&lt;=</span><span class=n>max_value</span><span class=p>;</span> <span class=o>++</span><span class=n>i</span><span class=p>){</span>
+        <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>j</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span> <span class=n>j</span><span class=o>&lt;</span><span class=n>size</span><span class=p>;</span> <span class=o>++</span><span class=n>j</span><span class=p>)</span> <span class=k>if</span> <span class=p>(</span><span class=n>array</span><span class=p>[</span><span class=n>j</span><span class=p>]</span> <span class=o>==</span> <span class=n>i</span><span class=p>)</span> <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>i</span><span class=o>&lt;&lt;</span><span class=s>&#34; &#34;</span><span class=p>;</span>
+        <span class=c1>// 看看陣列裡面有沒有等於i的值，全部都列出來
+</span><span class=c1></span>    <span class=p>}</span>
+    <span class=n>cout</span><span class=o>&lt;&lt;</span><span class=n>endl</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=selection-sort>selection sort</h2>
+<ul>
+<li>找到最小(或最大)的數字的位置(index)，將它移到最前面</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C++ data-lang=C++><span class=kt>void</span> <span class=nf>selsction_sort</span><span class=p>(</span><span class=kt>int</span> <span class=o>*</span><span class=n>array</span><span class=p>,</span><span class=n>size</span><span class=p>){</span>
+  <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span><span class=n>i</span><span class=o>&lt;</span><span class=n>size</span><span class=p>;</span><span class=o>++</span><span class=n>i</span><span class=p>){</span>
+    <span class=kt>int</span> <span class=n>min_index</span><span class=o>=</span><span class=n>i</span><span class=p>;</span>
+    <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>j</span><span class=o>=</span><span class=n>i</span><span class=o>+</span><span class=mi>1</span><span class=p>;</span><span class=n>j</span><span class=o>&lt;</span><span class=n>size</span><span class=p>;</span><span class=o>++</span><span class=n>j</span><span class=p>){</span>
+      <span class=k>if</span><span class=p>(</span><span class=n>a</span><span class=p>[</span><span class=n>j</span><span class=p>]</span><span class=o>&lt;</span><span class=n>a</span><span class=p>[</span><span class=n>min_index</span><span class=p>])</span> <span class=n>min_index</span><span class=o>=</span><span class=n>j</span><span class=p>;</span>
+    <span class=p>}</span>
+    <span class=n>swap</span><span class=p>(</span><span class=n>a</span><span class=p>[</span><span class=n>i</span><span class=p>],</span><span class=n>a</span><span class=p>[</span><span class=n>min_index</span><span class=p>]);</span>
+  <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=bubble-sort-泡沫排序>bubble sort 泡沫排序</h2>
+<ul>
+<li>兩兩比較並交換</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C++ data-lang=C++><span class=kt>void</span> <span class=nf>bubble_sort</span><span class=p>(</span><span class=kt>int</span> <span class=n>array</span><span class=p>[],</span> <span class=kt>int</span> <span class=n>size</span><span class=p>){</span>
+    <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span><span class=n>i</span><span class=o>&lt;</span><span class=n>size</span><span class=p>;</span><span class=o>++</span><span class=n>i</span><span class=p>){</span>
+        <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>j</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span><span class=n>j</span><span class=o>&lt;</span><span class=n>size</span><span class=o>-</span><span class=n>i</span><span class=o>-</span><span class=mi>1</span><span class=p>;</span><span class=o>++</span><span class=n>j</span><span class=p>){</span>
+            <span class=k>if</span><span class=p>(</span><span class=n>array</span><span class=p>[</span><span class=n>j</span><span class=p>]</span><span class=o>&gt;=</span><span class=n>array</span><span class=p>[</span><span class=n>j</span><span class=o>+</span><span class=mi>1</span><span class=p>])</span> <span class=n>swap</span><span class=p>(</span><span class=n>array</span><span class=p>[</span><span class=n>j</span><span class=p>],</span><span class=n>array</span><span class=p>[</span><span class=n>j</span><span class=o>+</span><span class=mi>1</span><span class=p>]);</span>
+        <span class=p>}</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=gnome-sort-侏儒排序>gnome sort 侏儒排序</h2>
+<ul>
+<li>優點:只需要一個while迴圈</li>
+<li>遇到一個數小於前一個數時交換，index開始遞減，檢查前面是否有更小的數</li>
+<li>圖例:
+<img class=lazyload src=/svg/loading.min.svg data-src=https://i.imgur.com/s87CE5z.gif data-srcset="https://i.imgur.com/s87CE5z.gif, https://i.imgur.com/s87CE5z.gif 1.5x, https://i.imgur.com/s87CE5z.gif 2x" data-sizes=auto alt=https://i.imgur.com/s87CE5z.gif title=https://i.imgur.com/s87CE5z.gif></li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C++ data-lang=C++><span class=kt>void</span> <span class=nf>gnome_sort</span><span class=p>(</span><span class=kt>int</span> <span class=n>array</span><span class=p>[],</span> <span class=kt>int</span> <span class=n>size</span><span class=p>){</span>
+    <span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span>
+    <span class=k>while</span> <span class=p>(</span><span class=n>i</span><span class=o>&lt;</span><span class=n>size</span><span class=p>){</span>
+        <span class=k>if</span> <span class=p>(</span><span class=n>i</span> <span class=o>==</span> <span class=mi>0</span> <span class=o>||</span> <span class=n>array</span><span class=p>[</span><span class=n>i</span><span class=o>-</span><span class=mi>1</span><span class=p>]</span> <span class=o>&lt;=</span> <span class=n>array</span><span class=p>[</span><span class=n>i</span><span class=p>])</span> <span class=n>i</span><span class=o>++</span><span class=p>;</span>
+        <span class=k>else</span><span class=p>{</span>
+            <span class=n>swap</span><span class=p>(</span><span class=n>array</span><span class=p>[</span><span class=n>i</span><span class=o>-</span><span class=mi>1</span><span class=p>],</span> <span class=n>array</span><span class=p>[</span><span class=n>i</span><span class=p>]);</span>
+            <span class=n>i</span><span class=o>--</span><span class=p>;</span>
+        <span class=p>}</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=insertion-sort-插入排序>Insertion sort 插入排序</h2>
+<ul>
+<li>若是前面一個數比現在的數字大，就往後挪並覆蓋掉原本的數字(需要有另一數記住原本的數字)，以找到當前數字應該在的位置</li>
+<li>過程需要大量向右挪移</li>
+<li>結構如果是list 可直接插入
+<img class=lazyload src=/svg/loading.min.svg data-src=https://i.imgur.com/J0931yG.gif data-srcset="https://i.imgur.com/J0931yG.gif, https://i.imgur.com/J0931yG.gif 1.5x, https://i.imgur.com/J0931yG.gif 2x" data-sizes=auto alt=https://i.imgur.com/J0931yG.gif title=https://i.imgur.com/J0931yG.gif></li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C++ data-lang=C++><span class=kt>void</span> <span class=nf>insertion_sort</span><span class=p>(</span><span class=kt>int</span> <span class=n>array</span><span class=p>[],</span> <span class=kt>int</span> <span class=n>size</span><span class=p>){</span>
+    <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>1</span><span class=p>;</span> <span class=n>i</span><span class=o>&lt;</span><span class=n>size</span><span class=p>;</span> <span class=o>++</span><span class=n>i</span><span class=p>){</span>
+        <span class=kt>int</span> <span class=n>pivot</span> <span class=o>=</span> <span class=n>array</span><span class=p>[</span><span class=n>i</span><span class=p>];</span>
+        <span class=kt>int</span> <span class=n>j</span><span class=p>;</span>
+        <span class=k>for</span> <span class=p>(</span><span class=n>j</span><span class=o>=</span><span class=n>i</span><span class=p>;</span> <span class=n>j</span><span class=o>&gt;</span><span class=mi>0</span><span class=p>;</span> <span class=o>--</span><span class=n>j</span><span class=p>){</span>
+            <span class=k>if</span> <span class=p>(</span><span class=n>pivot</span> <span class=o>&lt;</span> <span class=n>array</span><span class=p>[</span><span class=n>j</span><span class=o>-</span><span class=mi>1</span><span class=p>])</span>
+                <span class=n>array</span><span class=p>[</span><span class=n>j</span><span class=p>]</span> <span class=o>=</span> <span class=n>array</span><span class=p>[</span><span class=n>j</span><span class=o>-</span><span class=mi>1</span><span class=p>];</span>  <span class=c1>// 將比較大的數往右挪
+</span><span class=c1></span>            <span class=k>else</span>
+                <span class=k>break</span><span class=p>;</span>
+        <span class=p>}</span>
+        <span class=n>array</span><span class=p>[</span><span class=n>j</span><span class=p>]</span> <span class=o>=</span> <span class=n>pivot</span><span class=p>;</span>    <span class=c1>// 挪移完後直接放入所在的位置
+</span><span class=c1></span>    <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=merge-sort>merge sort</h2>
+<ol>
+<li>將數串不停對半分，直到單個數串只有一個數</li>
+<li>將分割好的數串按照大小分別從兩邊的數串填入數字到另一數串</li>
+</ol>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://i.imgur.com/3JRSjI9.png data-srcset="https://i.imgur.com/3JRSjI9.png, https://i.imgur.com/3JRSjI9.png 1.5x, https://i.imgur.com/3JRSjI9.png 2x" data-sizes=auto alt=https://i.imgur.com/3JRSjI9.png title=https://i.imgur.com/3JRSjI9.png></p>
+<ul>
+<li>遞迴版的merge sort</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C++ data-lang=C++><span class=kt>void</span> <span class=nf>merge</span><span class=p>(</span><span class=kt>int</span> <span class=n>arr1</span><span class=p>[],</span><span class=kt>int</span> <span class=n>arr2</span><span class=p>[],</span><span class=kt>int</span> <span class=n>merge</span><span class=p>[],</span><span class=kt>int</span> <span class=n>s1</span><span class=p>,</span><span class=kt>int</span> <span class=n>s2</span><span class=p>){</span>
+    <span class=kt>int</span> <span class=n>index</span><span class=o>=</span><span class=mi>0</span><span class=p>,</span><span class=n>index1</span><span class=o>=</span><span class=mi>0</span><span class=p>,</span><span class=n>index2</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span>
+    <span class=kt>int</span> <span class=n>a1</span><span class=p>[</span><span class=n>s1</span><span class=p>]</span><span class=o>=</span><span class=p>{</span><span class=mi>0</span><span class=p>},</span><span class=n>a2</span><span class=p>[</span><span class=n>s2</span><span class=p>]</span><span class=o>=</span><span class=p>{</span><span class=mi>0</span><span class=p>};</span>
+    <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span><span class=n>i</span><span class=o>&lt;</span><span class=n>s1</span><span class=p>;</span><span class=o>++</span><span class=n>i</span><span class=p>)</span> <span class=n>a1</span><span class=p>[</span><span class=n>i</span><span class=p>]</span><span class=o>=</span><span class=n>arr1</span><span class=p>[</span><span class=n>i</span><span class=p>];</span>
+    <span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span><span class=n>i</span><span class=o>&lt;</span><span class=n>s2</span><span class=p>;</span><span class=o>++</span><span class=n>i</span><span class=p>)</span> <span class=n>a2</span><span class=p>[</span><span class=n>i</span><span class=p>]</span><span class=o>=</span><span class=n>arr2</span><span class=p>[</span><span class=n>i</span><span class=p>];</span>
+    <span class=k>while</span><span class=p>(</span><span class=n>index</span><span class=o>&lt;</span><span class=n>s1</span><span class=o>+</span><span class=n>s2</span><span class=p>){</span>
+        <span class=k>if</span><span class=p>(</span><span class=n>index1</span><span class=o>&lt;</span><span class=n>s1</span> <span class=o>&amp;&amp;</span> <span class=n>index2</span><span class=o>&lt;</span><span class=n>s2</span><span class=p>){</span>
+            <span class=k>if</span><span class=p>(</span><span class=n>a1</span><span class=p>[</span><span class=n>index1</span><span class=p>]</span><span class=o>&lt;=</span><span class=n>a2</span><span class=p>[</span><span class=n>index2</span><span class=p>]){</span>
+                <span class=n>merge</span><span class=p>[</span><span class=n>index</span><span class=p>]</span><span class=o>=</span><span class=n>a1</span><span class=p>[</span><span class=n>index1</span><span class=p>];</span>
+                <span class=o>++</span><span class=n>index1</span><span class=p>;</span>
+            <span class=p>}</span>
+            <span class=k>else</span><span class=p>{</span>
+                <span class=n>merge</span><span class=p>[</span><span class=n>index</span><span class=p>]</span><span class=o>=</span><span class=n>a2</span><span class=p>[</span><span class=n>index2</span><span class=p>];</span>
+                <span class=o>++</span><span class=n>index2</span><span class=p>;</span>
+            <span class=p>}</span>
+            <span class=o>++</span><span class=n>index</span><span class=p>;</span>
+        <span class=p>}</span>
+        <span class=k>else</span><span class=p>{</span>
+            <span class=k>while</span><span class=p>(</span><span class=n>index1</span><span class=o>&lt;</span><span class=n>s1</span><span class=p>){</span>
+                <span class=n>merge</span><span class=p>[</span><span class=n>index</span><span class=p>]</span><span class=o>=</span><span class=n>a1</span><span class=p>[</span><span class=n>index1</span><span class=p>];</span>
+                <span class=o>++</span><span class=n>index1</span><span class=p>;</span>
+                <span class=o>++</span><span class=n>index</span><span class=p>;</span>
+            <span class=p>}</span>
+            <span class=k>while</span><span class=p>(</span><span class=n>index2</span><span class=o>&lt;</span><span class=n>s2</span><span class=p>){</span>
+                <span class=n>merge</span><span class=p>[</span><span class=n>index</span><span class=p>]</span><span class=o>=</span><span class=n>a2</span><span class=p>[</span><span class=n>index2</span><span class=p>];</span>
+                <span class=o>++</span><span class=n>index2</span><span class=p>;</span>
+                <span class=o>++</span><span class=n>index</span><span class=p>;</span>
+            <span class=p>}</span>
+        <span class=p>}</span>
+    <span class=p>}</span>
+    <span class=c1>//填入數串
+</span><span class=c1></span><span class=p>}</span>
+<span class=kt>void</span> <span class=nf>merge_sort</span><span class=p>(</span><span class=kt>int</span> <span class=n>array</span><span class=p>[],</span> <span class=kt>int</span> <span class=n>size</span><span class=p>){</span>
+    <span class=k>if</span><span class=p>(</span><span class=n>size</span><span class=o>&lt;=</span><span class=mi>1</span><span class=p>)</span> <span class=k>return</span><span class=p>;</span>
+    <span class=kt>int</span> <span class=n>mid</span><span class=o>=</span><span class=n>size</span><span class=o>/</span><span class=mi>2</span><span class=p>,</span><span class=n>newArr</span><span class=p>[</span><span class=n>size</span><span class=p>]</span><span class=o>=</span><span class=p>{</span><span class=mi>0</span><span class=p>};</span>
+    <span class=n>merge_sort</span><span class=p>(</span><span class=n>array</span><span class=p>,</span><span class=n>mid</span><span class=p>);</span>
+    <span class=n>merge_sort</span><span class=p>(</span><span class=o>&amp;</span><span class=n>array</span><span class=p>[</span><span class=n>mid</span><span class=p>],</span><span class=n>size</span><span class=o>-</span><span class=n>mid</span><span class=p>);</span>
+    <span class=n>merge</span><span class=p>(</span><span class=n>array</span><span class=p>,</span><span class=o>&amp;</span><span class=n>array</span><span class=p>[</span><span class=n>mid</span><span class=p>],</span><span class=n>array</span><span class=p>,</span><span class=n>mid</span><span class=p>,</span><span class=n>size</span><span class=o>-</span><span class=n>mid</span><span class=p>);</span>
+    <span class=c1>//對半分，再組合在一起
+</span><span class=c1></span><span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=quick-sort>quick sort</h2>
+<ul>
+<li>選定一個樞紐(pivot)之後</li>
+<li>將左邊大於樞紐的數跟右邊小於樞紐的數互換
+<img class=lazyload src=/svg/loading.min.svg data-src=https://i.imgur.com/dyJxKxK.png data-srcset="https://i.imgur.com/dyJxKxK.png, https://i.imgur.com/dyJxKxK.png 1.5x, https://i.imgur.com/dyJxKxK.png 2x" data-sizes=auto alt=https://i.imgur.com/dyJxKxK.png title=https://i.imgur.com/dyJxKxK.png></li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C++ data-lang=C++><span class=kt>void</span> <span class=nf>quick_sort</span><span class=p>(</span><span class=kt>int</span> <span class=n>array</span><span class=p>[],</span> <span class=kt>int</span> <span class=n>left</span><span class=p>,</span> <span class=kt>int</span> <span class=n>right</span><span class=p>){</span>
+    <span class=c1>//left: 最小的索引值:0，right:最大索引值ex:10-1=9
+</span><span class=c1></span>    <span class=k>if</span> <span class=p>(</span><span class=n>left</span> <span class=o>&lt;</span> <span class=n>right</span><span class=p>){</span>
+        <span class=c1>// divide (partition)
+</span><span class=c1></span>        <span class=kt>int</span> <span class=n>pivot</span> <span class=o>=</span> <span class=n>array</span><span class=p>[(</span><span class=n>left</span><span class=o>+</span><span class=n>right</span><span class=p>)</span><span class=o>/</span><span class=mi>2</span><span class=p>];</span>  <span class=c1>// pivot 可以隨便選
+</span><span class=c1></span>        <span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>left</span> <span class=o>-</span> <span class=mi>1</span><span class=p>,</span> <span class=n>j</span> <span class=o>=</span> <span class=n>right</span> <span class=o>+</span> <span class=mi>1</span><span class=p>;</span>
+        <span class=k>while</span> <span class=p>(</span><span class=n>i</span> <span class=o>&lt;</span> <span class=n>j</span><span class=p>){</span>
+            <span class=k>do</span> <span class=o>++</span><span class=n>i</span><span class=p>;</span> <span class=k>while</span> <span class=p>(</span><span class=n>array</span><span class=p>[</span><span class=n>i</span><span class=p>]</span> <span class=o>&lt;</span> <span class=n>pivot</span><span class=p>);</span>
+            <span class=k>do</span> <span class=o>--</span><span class=n>j</span><span class=p>;</span> <span class=k>while</span> <span class=p>(</span><span class=n>array</span><span class=p>[</span><span class=n>j</span><span class=p>]</span> <span class=o>&gt;</span> <span class=n>pivot</span><span class=p>);</span>
+            <span class=k>if</span> <span class=p>(</span><span class=n>i</span> <span class=o>&lt;</span> <span class=n>j</span><span class=p>)</span> <span class=n>swap</span><span class=p>(</span><span class=n>array</span><span class=p>[</span><span class=n>i</span><span class=p>],</span> <span class=n>array</span><span class=p>[</span><span class=n>j</span><span class=p>]);</span>
+        <span class=p>}</span>
+        <span class=n>quick_sort</span><span class=p>(</span><span class=n>array</span><span class=p>,</span> <span class=n>left</span><span class=p>,</span> <span class=n>i</span><span class=o>-</span><span class=mi>1</span><span class=p>);</span>
+        <span class=n>quick_sort</span><span class=p>(</span><span class=n>array</span><span class=p>,</span> <span class=n>j</span><span class=o>+</span><span class=mi>1</span><span class=p>,</span> <span class=n>right</span><span class=p>);</span>
+        <span class=c1>// 分別sort pivot兩邊的數串
+</span><span class=c1></span>    <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=counting-sort>counting sort</h2>
+<ul>
+<li>創建另一個新的大陣列，並初始化為零</li>
+<li>依照原陣列中的數字，在新的陣列對應索引號的值加一
+(表示每個數字總共有幾個)</li>
+<li>遍歷新的陣列，並依照紀錄的數字數量將數填回原陣列</li>
+<li>缺點:只能記大於等於零的整數</li>
+<li>優點:不需要計算
+<img class=lazyload src=/svg/loading.min.svg data-src=https://i.imgur.com/REvgXoQ.png data-srcset="https://i.imgur.com/REvgXoQ.png, https://i.imgur.com/REvgXoQ.png 1.5x, https://i.imgur.com/REvgXoQ.png 2x" data-sizes=auto alt=https://i.imgur.com/REvgXoQ.png title=https://i.imgur.com/REvgXoQ.png></li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C++ data-lang=C++><span class=kt>void</span> <span class=nf>counting_sort</span><span class=p>(</span><span class=kt>int</span> <span class=n>array</span><span class=p>[],</span> <span class=kt>int</span> <span class=n>size</span><span class=p>){</span>
+    <span class=kt>int</span> <span class=n>count</span><span class=p>[</span><span class=mi>10000</span><span class=p>]</span> <span class=o>=</span> <span class=p>{</span><span class=mi>0</span><span class=p>};</span>
+    <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span> <span class=n>i</span><span class=o>&lt;</span><span class=n>size</span><span class=p>;</span> <span class=o>++</span><span class=n>i</span><span class=p>)</span> <span class=n>count</span><span class=p>[</span> <span class=n>array</span><span class=p>[</span><span class=n>i</span><span class=p>]</span> <span class=p>]</span><span class=o>++</span><span class=p>;</span>
+    <span class=c1>// 紀錄對應的數字有幾個
+</span><span class=c1></span>    <span class=c1>// 計數陣列的索引值大小順序，正是元素大小順序。
+</span><span class=c1></span>    <span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>,</span> <span class=n>k</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span> <span class=n>k</span><span class=o>&lt;</span><span class=n>size</span><span class=p>;</span> <span class=o>++</span><span class=n>i</span><span class=p>)</span> <span class=k>while</span> <span class=p>(</span><span class=n>count</span><span class=p>[</span><span class=n>i</span><span class=p>]</span><span class=o>--</span><span class=p>)</span> <span class=n>array</span><span class=p>[</span><span class=n>k</span><span class=o>++</span><span class=p>]</span> <span class=o>=</span> <span class=n>i</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>Updated on 2021-08-16</span>
+</div>
+<div class=post-info-license></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md><span>
+<a class=link-to-markdown href=/sort/index.md target=_blank>Read Markdown</a>
+</span></div>
+<div class=post-info-share>
+<span></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/algorithm/>algorithm</a>,&nbsp;<a href=/tags/c++/>C++</a></section>
+<section>
+<span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
+</section>
+</div>
+<div class=post-nav><a href=/search/ class=prev rel=prev title=Search><i class="fas fa-angle-left fa-fw"></i>Search</a>
+<a href=/mst/ class=next rel=next title=MST>MST<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>Powered by <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.86.0">Hugo</a> | Theme - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>饅頭</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments">
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><script type=text/javascript src=https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:5},comment:{},data:{"id-1":"饅頭的部落格","id-2":"饅頭的部落格"},typeit:{cursorChar:"|",cursorSpeed:1e3,data:{"id-1":["id-1"],"id-2":["id-2"]},duration:-1,speed:100}}</script><script type=text/javascript src=/js/theme.min.js></script></body>
+</html>
