@@ -1,4 +1,4 @@
-# UsingMyAddressWithGithubPages
+# Using My Address With Github Pages
 
 # 如何將gihub pages導向到自己申請的網址
 ## 第一步 架一個自己的旺網站
