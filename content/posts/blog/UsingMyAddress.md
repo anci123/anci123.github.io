@@ -11,11 +11,11 @@ draft: false
   - 不過freenom申請的免費域名期限最多是一年喔
   - 快到期時會寄 email 通知，到時候就可以再續一年啦~
 - 設置cname
-   1. 點選 freenom 的 service 下的 My Domains  
+   1. 點選 freenom 的 service 下的 My Domains   
    ![](/images/cname.jpg)
-   2. 點選 `Manage Domain`  
+   2. 點選 `Manage Domain`   
    ![](/images/cname(1).jpg)
-   3. 點選 `Manage Freenom DNS`  
+   3. 點選 `Manage Freenom DNS`   
    ![](/images/cname(2).jpg)
    4. 輸入自己要的 cnmae 並選好 type
    5. Target 則輸入 `[YOUR].github.io`  
