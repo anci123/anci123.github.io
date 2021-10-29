@@ -12,14 +12,14 @@ draft: false
   - 快到期時會寄 email 通知，到時候就可以再續一年啦~
 - 設置cname
    1. 點選 freenom 的 service 下的 My Domains   
-   ![](/images/cname.jpg)
+   ![](cname.jpg)
    2. 點選 `Manage Domain`   
-   ![](/images/cname(1).jpg)
+   ![](cname(1).jpg)
    3. 點選 `Manage Freenom DNS`   
-   ![](/images/cname(2).jpg)
+   ![](cname(2).jpg)
    4. 輸入自己要的 cnmae 並選好 type
    5. Target 則輸入 `[YOUR].github.io`  
-   ![](/images/cname(3).jpg)
+   ![](cname(3).jpg)
 ## 第三步 更改github 上的 workflows
 - 在deploy 後面加上 `cname: [YUOR CNAME]`， ex:`cname: 'blog.mantoto.tk'`
 ```
