@@ -12,7 +12,7 @@ draft: false
   - 快到期時會寄 email 通知，到時候就可以再續一年啦~
 - 設置cname
    1. 點選 freenom 的 service 下的 My Domains  
-   ![cname](cname.jpg "cname")
+   ![cname](cname.png "cname")
    1. 點選 `Manage Domain`   
    ![](cname(1).jpg "cname")
    1. 點選 `Manage Freenom DNS`   
