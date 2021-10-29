@@ -1,12 +1,12 @@
 # Using My Address With Github Pages
 
 # 如何將gihub pages導向到自己申請的網址
-## 第一步 架一個自己的旺網站
+## 第一步 架一個自己的網站
 - 如何架一個部落格，請看[小十的部落格](https://blog.smallten.tk/p/hugo-01/)
-## 第二步 申請domain name 並增加一個 cname
-- 想申請免費的domain name? [freenom](https://www.freenom.com)
+## 第二步 申請 domain name 並增加一個 cname
+- 想申請免費的 domain name ? [freenom](https://www.freenom.com)
   - 不過freenom申請的免費域名期限最多是一年喔
-  - 快到期時會寄email通知，到時候就可以再續一年啦~
+  - 快到期時會寄 email 通知，到時候就可以再續一年啦~
 - 設置cname
    1. 點選 freenom 的 service 下的 My Domains  
    ![](/images/cname.jpg)
