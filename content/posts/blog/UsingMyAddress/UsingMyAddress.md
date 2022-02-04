@@ -1,7 +1,7 @@
 ---
 title: "Using My Address With Github Pages"
 date: 2021-10-29T22:20:38+08:00
-draft: false
+draft: flase
 ---
 # 如何將gihub pages導向到自己申請的網址
 ## 第一步 架一個自己的網站
