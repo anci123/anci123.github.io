@@ -16,7 +16,7 @@
 <meta name=application-name content="饅頭的部落格">
 <meta name=apple-mobile-web-app-title content="饅頭的部落格"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://blog.manto-meow.tk/learninggit02/><link rel=prev href=http://blog.manto-meow.tk/learninggit01/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"LearningGit02","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/blog.manto-meow.tk\/learninggit02\/"},"genre":"posts","keywords":"git","wordcount":26,"url":"http:\/\/blog.manto-meow.tk\/learninggit02\/","datePublished":"2022-02-12T11:10:39+08:00","dateModified":"2022-02-12T11:10:39+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"饅頭"},"author":{"@type":"Person","name":"饅頭"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://blog.manto-meow.tk/learninggit02/><link rel=prev href=http://blog.manto-meow.tk/learninggit01/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"LearningGit02","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/blog.manto-meow.tk\/learninggit02\/"},"genre":"posts","keywords":"git","wordcount":146,"url":"http:\/\/blog.manto-meow.tk\/learninggit02\/","datePublished":"2022-02-12T11:10:39+08:00","dateModified":"2022-02-12T11:10:39+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"饅頭"},"author":{"@type":"Person","name":"饅頭"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'dark'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'dark'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -57,7 +57,7 @@
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">LearningGit02</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>饅頭</a></span>&nbsp;<span class=post-category>included in <a href=/categories/git/><i class="far fa-folder fa-fw"></i>git</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-02-12>2022-02-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;26 words&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-02-12>2022-02-12</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;146 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
 </div><div class="details toc" id=toc-static kept>
 <div class="details-summary toc-title">
@@ -72,7 +72,7 @@
 </div><div class=content id=content><h1 id=git---branch-分支>git - branch 分支</h1>
 <h2 id=開始使用>開始使用</h2>
 <ul>
-<li>查看分支<br>
+<li>列出分支<br>
 <code>git branch</code>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
@@ -88,7 +88,29 @@ branch-1
 meo
 </code></pre></td></tr></table>
 </div>
-</div></li>
+</div><ul>
+<li><code>*</code> 代表當前所在的分支</li>
+</ul>
+</li>
+<li>新增分支<br>
+<code>git branch BRANCH_NAME</code></li>
+<li>改變分支名稱<br>
+<code>git branch -m OLD_NAME NEW_NAME</code></li>
+<li>刪除分支<br>
+<code>git branch -d BRANCH</code><br>
+如果要刪的分支還沒有被合併，則會出現error
+<ul>
+<li>這時可以使用強制刪除
+<code>git branch -D BRANCH</code></li>
+</ul>
+</li>
+<li>切換分支<br>
+<code>git checkout DIR_BRANCH</code>
+<ul>
+<li><code>git checkout -b DIR_BRANCH</code><br>
+如果有該分支，則直接切換；若沒有該分支，則git會先建立該分支再切換過去</li>
+</ul>
+</li>
 </ul></div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
