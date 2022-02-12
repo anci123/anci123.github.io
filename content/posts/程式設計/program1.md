@@ -6,7 +6,7 @@ categories: ["Language"]
 ---
 
 # 程式設計(一)
-
+<!--more-->
 ## **注意事項**
 
 * main函式先加 <font color=#00FFFF>return 0</font>

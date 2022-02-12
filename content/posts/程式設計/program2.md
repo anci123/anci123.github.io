@@ -4,7 +4,8 @@ date: 2021-07-25T15:00:36+08:00
 tags: ["C"]
 categories: ["Language"]
 ---
-# struct
+# 程式設計(二)
+<!--more-->
 
 ## 解決 alignment 的問題
 

@@ -4,6 +4,7 @@ date: 2021-10-29T22:20:38+08:00
 draft: flase
 ---
 # 如何將gihub pages導向到自己申請的網址
+<!--more-->
 ## 第一步 架一個自己的網站
 - 如何架一個部落格，請看[小十的部落格](https://blog.smallten.tk/p/hugo-01/)
 ## 第二步 申請 domain name 並增加一個 cname

@@ -3,9 +3,10 @@ title: "Search"
 date: 2021-08-16T17:32:34+08:00
 draft: false
 ---
-<!--more-->
+
 # search
 ## binary search
+<!--more-->
 * 跟中間的數字比較以判斷目標的落點，加速尋找的速度
 * 回傳目標數的index
 * 注意:搜尋前需要先排序過

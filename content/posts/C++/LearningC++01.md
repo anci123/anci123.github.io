@@ -6,7 +6,7 @@ categories: ["Language"]
 ---
 
 # C++學習筆記
-
+<!--more-->
 ## 標頭檔
 
 * **<bits/stdc++.h>** 是萬能標頭檔

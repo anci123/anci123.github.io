@@ -7,6 +7,7 @@ categories: ["web"]
 ---
 
 # html 學習紀錄
+<!--more-->
 ## 基本架構
 ```html
 <!DOCTYPE html>

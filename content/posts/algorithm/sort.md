@@ -5,12 +5,14 @@ categories: ["algorithm"]
 date: 2021-08-16T17:32:43+08:00
 draft: false
 ---
+# 排序
 <!--more-->
-# 搜尋
 ## 暴力搜尋法(窮舉)
+
 1. 找到最大值及最小值
 2. 設定一個i值從最小值開始遞增到最大值
 3. 檢查陣列中是否有等於i值的數，全部列出
+
 ```C++
 void brute_force(int array[], int size){
     int max_value = array[0];
