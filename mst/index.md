@@ -4,7 +4,7 @@
 # MST
 
 ## dijkstra
-
+<!--more-->
 - 固定一點，找該點與其他點之最短路徑
 
   ![Dijkstra_Animation](/picture/Dijkstra_Animation.gif)

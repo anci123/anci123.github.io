@@ -5,18 +5,18 @@
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
 <title>LearningGit01 - 饅頭的部落格</title><meta name=Description content><meta property="og:title" content="LearningGit01">
-<meta property="og:description" content="初始設定 git init: 初始化當前目錄，開始進行版控~(產生.git 目錄) git status : 查詢當前狀態(commit 前查看狀態) git add: 將檔案加入暫存區(commit">
+<meta property="og:description" content="git - 安裝、初始設定及操作">
 <meta property="og:type" content="article">
 <meta property="og:url" content="http://blog.manto-meow.tk/learninggit01/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2021-07-25T16:03:20+08:00">
-<meta property="article:modified_time" content="2021-07-25T16:03:20+08:00">
+<meta property="article:published_time" content="2022-02-11T16:03:20+08:00">
+<meta property="article:modified_time" content="2022-02-11T16:03:20+08:00">
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="LearningGit01">
-<meta name=twitter:description content="初始設定 git init: 初始化當前目錄，開始進行版控~(產生.git 目錄) git status : 查詢當前狀態(commit 前查看狀態) git add: 將檔案加入暫存區(commit">
+<meta name=twitter:description content="git - 安裝、初始設定及操作">
 <meta name=application-name content="饅頭的部落格">
 <meta name=apple-mobile-web-app-title content="饅頭的部落格"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://blog.manto-meow.tk/learninggit01/><link rel=prev href=http://blog.manto-meow.tk/learningc-01/><link rel=next href=http://blog.manto-meow.tk/starcoder%E6%9A%91%E8%A8%93week1/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"LearningGit01","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/blog.manto-meow.tk\/learninggit01\/"},"genre":"posts","keywords":"git","wordcount":300,"url":"http:\/\/blog.manto-meow.tk\/learninggit01\/","datePublished":"2021-07-25T16:03:20+08:00","dateModified":"2021-07-25T16:03:20+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"饅頭"},"author":{"@type":"Person","name":"饅頭"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=canonical href=http://blog.manto-meow.tk/learninggit01/><link rel=prev href=http://blog.manto-meow.tk/html-1/><link rel=next href=http://blog.manto-meow.tk/learninggit02/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"LearningGit01","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/blog.manto-meow.tk\/learninggit01\/"},"genre":"posts","keywords":"git","wordcount":1406,"url":"http:\/\/blog.manto-meow.tk\/learninggit01\/","datePublished":"2022-02-11T16:03:20+08:00","dateModified":"2022-02-11T16:03:20+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"饅頭"},"author":{"@type":"Person","name":"饅頭"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'dark'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'dark'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -57,15 +57,83 @@
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">LearningGit01</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=/ title=Author rel=" author" class=author><i class="fas fa-user-circle fa-fw"></i>饅頭</a></span>&nbsp;<span class=post-category>included in <a href=/categories/git/><i class="far fa-folder fa-fw"></i>git</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-07-25>2021-07-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;300 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-02-11>2022-02-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1406 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept>
 <div class="details-summary toc-title">
 <span>Contents</span>
 <span><i class="details-icon fas fa-angle-right"></i></span>
 </div>
-<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents></nav></div>
-</div><div class=content id=content><h1 id=初始設定>初始設定</h1>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#安裝>安裝</a></li>
+<li><a href=#初始設定>初始設定</a>
+<ul>
+<li><a href=#使用者設定>使用者設定</a></li>
+<li><a href=#其他設定>其他設定</a></li>
+</ul>
+</li>
+<li><a href=#基本操作>基本操作</a></li>
+<li><a href=#其他操作>其他操作</a>
+<ul>
+<li><a href=#讓-git-幫你刪除變更檔案>讓 git 幫你刪除、變更檔案</a></li>
+<li><a href=#修改最近一次commit紀錄>修改最近一次commit紀錄</a></li>
+<li><a href=#gitgnore>.gitgnore</a></li>
+<li><a href=#只想提交部分文件>只想提交部分文件</a></li>
+</ul>
+</li>
+<li><a href=#注意事項>注意事項</a></li>
+</ul>
+</nav></div>
+</div><div class=content id=content><h1 id=git---安裝初始設定及操作>git - 安裝、初始設定及操作</h1>
+<h2 id=安裝>安裝</h2>
+<ul>
+<li>安裝指令<br>
+<code>sudo apt-get install git</code></li>
+<li>GUL工具<br>
+<code>sufo apt-get install gitk</code></li>
+</ul>
+<h2 id=初始設定>初始設定</h2>
+<h3 id=使用者設定>使用者設定</h3>
+<ul>
+<li>設定使用者名稱<br>
+<code>git config --global user.name "USER_NAME"</code></li>
+<li>設定使用者信箱<br>
+<code>git config --global user.email "USER_EMAIL"</code></li>
+<li>檢視使用者設定
+<ol>
+<li><code>git config --list</code></li>
+<li><code>vim ~./gitconfig</code></li>
+</ol>
+</li>
+<li>為特定專案設定使用者: 使用<code>--local</code>參數<br>
+<code>git config --local user.name "USER_NAME"</code><br>
+<code>git config --local user.email "USER_EMAIL"</code></li>
+</ul>
+<h3 id=其他設定>其他設定</h3>
+<ul>
+<li>設定預設編輯器，將雙引號中的文字替換成你想用的文字編輯器即可<br>
+<code>git config --global core.editor "vim"</code>
+<ul>
+<li>設定完成之後也可以到<code>~/.gitconfig</code> 確認</li>
+</ul>
+</li>
+<li>設定縮寫，視個人情況而定<br>
+<code>git config --global alias.st status</code><br>
+<code>git config --global alias.co checkout</code><br>
+<code>git config --global alias.br branch</code><br>
+<code>git config --global alias.l "log --oneline --graph"</code>
+<code>git config --global alias.ls 'log --graph --pretty=format:"%h &lt;%an> %ar %s"'</code></li>
+<li>記住帳號密碼，這樣就不用每次push都要打帳密啦~<br>
+<code>git config --global credential.helper store</code>
+<ul>
+<li>修改: 直接去<code>~/.git-credential</code>修改<br>
+之後將cache daemon 退出<br>
+<code>git credential-cache exit</code></li>
+</ul>
+</li>
+</ul>
+<h2 id=基本操作>基本操作</h2>
 <ul>
 <li><code>git init</code>: 初始化當前目錄，開始進行版控~(產生.git 目錄)</li>
 <li><code>git status</code> : 查詢當前狀態(commit 前查看狀態)</li>
@@ -78,31 +146,176 @@
 </li>
 <li><code>git commit</code>: 儲存異動
 <ul>
-<li><code>-m</code> :後面加上這次有什麼變動的描述 ex:<code>git commit -m "change abc.md"</code></li>
-<li><code>--allow-empty</code>: 沒有東西也可以commit XDD</li>
-<li><code>git commit -a -m "update content"</code>:add、commit一起搞定</li>
-<li><code>--author="manto"</code>: 找manto的commit</li>
-<li><code>git log --oneline --author="manto\|adam"</code>: 找兩個人的commit</li>
+<li>不加任何參數: 直接開啟預設文字編輯器，可在其編輯commit訊息</li>
+<li>直接加上commit message<br>
+<code>git commit -m "change abc.md"</code><br>
+<code>-m</code> :後面加上這次有什麼變動的描述</li>
+<li>沒有東西也可以commit XDD<br>
+<code>git commit --allow-empty</code></li>
+<li>add、commit一起搞定<br>
+<code>git commit -a -m "update content"</code><br>
+不過對於<code>Untrack file</code>無效，所以如果有新增檔案或資料夾，務必add 完再commit</li>
 </ul>
 </li>
-<li><code>git log</code>: 檢視git log 紀錄
+<li><code>git log</code>: 檢視git紀錄
 <ul>
-<li><code>--oneline</code>、<code>--oneline 跟 --graph</code>: 讓輸出更精簡</li>
+<li>讓輸出更精簡<br>
+<code>git log --oneline</code><br>
+<code>git -oneline --graph</code></li>
+<li>找 &ldquo;manto&rdquo; 這個人的commit<br>
+<code>git log --author="manto"</code></li>
+<li>找兩個人的commit<br>
+<code>git log --oneline --author="USER_1\|USER_2"</code></li>
+<li><code>git log --grep="add"</code>: 找commit massage 中符合該字串的訊息</li>
+<li><code>git log -S "FILE"</code>: 找commit 的內容中有符合該訊息的內容</li>
+<li>查詢特定時段的紀錄<br>
+<code>git log --oneline --since="9am" --until "12am"</code><br>
+<code>git log --oneline --since="9am" --until "12am" --after="2020-07"</code></li>
+<li>檢視特定檔案修改紀錄<br>
+<code>git log FILE</code><br>
+查看詳細修改的內容<br>
+<code>git log -p FILE</code></li>
 </ul>
 </li>
-<li><code>git config --global credential.helper store</code>: 記住帳號密碼，這樣就不用每次push都要打帳密啦~
+<li><code>git blame</code>: 查看某一行程式是誰寫的
 <ul>
-<li>修改: 直接去<code>~/.git-credential</code>修改<br>
-之後將cache daemon 退出<br>
-<code>git credential-cache exit</code></li>
+<li>查看該檔案每一行各是誰寫的<br>
+<code>git blame FILE</code></li>
+<li>查看特定行數<br>
+<code>git blame -L 5,10 FILE</code></li>
+</ul>
+</li>
+<li><code>git checkout</code>: 恢復被刪除的檔案
+<ul>
+<li><code>git checkout DELETED_FILE</code></li>
+<li>一次恢復所有被刪除的檔案<br>
+<code>git checkout .</code></li>
+<li>用其他的版本來覆蓋被刪除的檔案<br>
+<code>git checkout HEAD~2 FILE</code><br>
+<code>git checkout HEAD~2 .</code><br>
+=> 拿距離現在兩個版本以前的檔案來覆
+蓋</li>
+</ul>
+</li>
+<li><code>git reset</code>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>$ git log --oneline
+a305dd7 (HEAD -&gt; main, origin/main) add heml01.md
+459aebc change name to index.en.md
+c92177f add .en to picture name
+8f1b6d5 change jpg to png
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>相對做法<br>
+<code>git reset a305dd7^</code><br>
+<code>git reset master^</code><br>
+<code>git reset HEAD^</code><br>
+以上都是回復到前一個commit 紀錄的意思
+<ul>
+<li><code>^</code> 是前一個，<code>^^</code> 是前兩個，以此類推</li>
+<li><code>git reset master~5</code>
+則是倒退到前五個的意思</li>
+</ul>
+</li>
+<li>絕對作法
+<code>git reset 459aebc</code><br>
+代表回復到<code>459aebc</code>這一版的意思<br>
+=>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>$ git log --oneline
+459aebc (HEAD -&gt; main, origin/main) change name to index.en.md
+c92177f add .en to picture name
+8f1b6d5 change jpg to png
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>回復reset掉的commit<br>
+<code>git reset a305dd7 --hard</code><br>
+其實那些被reset刪除的commit 並沒有消失，還是可以還原的</li>
+<li>查看所有紀錄，包括reset紀錄<br>
+<code>git reflog</code></li>
+<li>三個模式
+<ul>
+<li><code>--mixed</code> 只有暫存區會變動，檔案不會變動</li>
+<li><code>--soft</code> 只有head會移動</li>
+<li><code>--hard</code> 檔案跟暫存區都會變動</li>
 </ul>
 </li>
 </ul>
-</div><div class=post-footer id=post-footer>
+</li>
+</ul>
+<h2 id=其他操作>其他操作</h2>
+<h3 id=讓-git-幫你刪除變更檔案>讓 git 幫你刪除、變更檔案</h3>
+<ul>
+<li>讓git 幫你刪除檔案: 直接把檔案刪掉並將記錄加進暫存區<br>
+<code>rm FILE</code> + <code>git add FILE</code><br>
+=> <code>git rm FILE</code></li>
+<li>將檔案從 git 移除，不過檔案仍在資料夾中<br>
+<code>git rm FILE --cached</code></li>
+<li>讓git 幫你變更檔名: 直接把檔案改名並將記錄加進暫存區<br>
+<code>mv FILE file</code> + <code>git add --all</code><br>
+=> <code>git mv FILE file</code></li>
+</ul>
+<h3 id=修改最近一次commit紀錄>修改最近一次commit紀錄</h3>
+<ul>
+<li>修改上一次的 commit message<br>
+<code>git commit --amend -m "NEW_COMMIT_MESSAGE"</code></li>
+<li>追加檔案到最近一次commit<br>
+<code>git add FILE</code><br>
+<code>git commit --ament --no-edit</code></li>
+</ul>
+<h3 id=gitgnore>.gitgnore</h3>
+<ul>
+<li>加入要忽略的檔案</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>*.zip
+123.txt
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>接下來在資料夾中加入符合條件的檔案都會被 git 忽略</li>
+<li>如果要加入一些符合gitgnore規則的檔案到git中<br>
+<code>git add -f FILE</code></li>
+<li>不過gitgnore的規則只會對gitgnore建立之後新增的檔案有效，如果要將該規則朔及既往的話，先用 <code>git rm --cached</code> 將檔案刪除，之後就會被 git 忽略了</li>
+<li>清除忽略檔案<br>
+<code>git clean -fix</code></li>
+</ul>
+<h3 id=只想提交部分文件>只想提交部分文件</h3>
+<ul>
+<li><code>git add -p FILE</code></li>
+<li>之後選擇 <code>e</code></li>
+<li>之後便會跳轉到預設文字編輯器，即可編輯要提交的那些部分</li>
+</ul>
+<h2 id=注意事項>注意事項</h2>
+<ul>
+<li>空的目錄無法被提交</li>
+</ul></div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-07-25</span>
+<span>Updated on 2022-02-11</span>
 </div>
 <div class=post-info-license></div>
 </div>
@@ -121,8 +334,8 @@
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
 </section>
 </div>
-<div class=post-nav><a href=/learningc-01/ class=prev rel=prev title=LearningC++01><i class="fas fa-angle-left fa-fw"></i>LearningC++01</a>
-<a href=/starcoder%E6%9A%91%E8%A8%93week1/ class=next rel=next title=StarCoder暑訓week1>StarCoder暑訓week1<i class="fas fa-angle-right fa-fw"></i></a></div>
+<div class=post-nav><a href=/html-1/ class=prev rel=prev title="Html 01"><i class="fas fa-angle-left fa-fw"></i>Html 01</a>
+<a href=/learninggit02/ class=next rel=next title=LearningGit02>LearningGit02<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 </article></div>
 </main><footer class=footer>

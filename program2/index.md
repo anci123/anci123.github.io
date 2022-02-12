@@ -1,6 +1,7 @@
 # Program2
 
-# struct
+# 程式設計(二)
+<!--more-->
 
 ## 解決 alignment 的問題
 

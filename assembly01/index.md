@@ -1,6 +1,7 @@
 # Assembly01
 
 # 學習組語
+<!--more-->
 ## 安裝 nasm
 1.  安裝nasm
     ```
