@@ -2,7 +2,8 @@ baseURL = "http://blog.manto-meow.tk/"
 # [en, zh-cn, fr, zh-tw ,...] 設置默認語言
 defaultContentLanguage = "en"
 title = "饅頭的部落格"
-
+# GA Tracking ID
+googleAnalytics = "G-61S38MLSDZ"
 # 設置默認主題
 theme = "LoveIt"
 
